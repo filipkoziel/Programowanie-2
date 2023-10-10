@@ -2,19 +2,9 @@
 
 using namespace std;
 
-/*
-1.
-2. 
-3. 
-4. 
-5. 
-6. 
-7. Program wyœwietlaj¹cy odpowiedni komunikat w zale¿noœci od podanej temperatury (np. "ciep³o" dla temperatury powy¿ej 20 stopni Celsjusza, "ch³odno" dla temperatury poni¿ej 10 stopni Celsjusza itd.)
-*/
-
 
 //Napisz funkcjê, która podzieli dwie liczby.
-void task1()
+void task0()
 {
     int firstNumber, secondNumber;
 
@@ -35,7 +25,7 @@ void task1()
 }
 
 //Program sprawdzaj¹cy czy podana liczba jest parzysta czy nieparzysta
-void task2()
+void task1()
 {
     int number;
 
@@ -50,7 +40,7 @@ void task2()
 }
 
 //Program sprawdzaj¹cy czy podana liczba jest dodatnia, ujemna czy równa zero
-void task3()
+void task2()
 {
     int number;
 
@@ -66,7 +56,7 @@ void task3()
 }
 
 //Program sprawdzaj¹cy czy podany rok jest rokiem przestêpnym
-void task4()
+void task3()
 {
     int year;
 
@@ -80,7 +70,7 @@ void task4()
 }
 
 //Program wyœwietlaj¹cy odpowiedni komunikat w zale¿noœci od podanej oceny (np. "bardzo dobry" dla oceny 5, "dobry" dla oceny 4 itd.)
-void task5()
+void task4()
 {
     int grade;
 
@@ -104,7 +94,7 @@ void task5()
 }
 
 //Program sprawdzaj¹cy czy podane has³o jest poprawne (np. jeœli has³o jest "abc123", program powinien wyœwietliæ "has³o poprawne", jeœli jest inne, powinien wyœwietliæ "has³o niepoprawne").
-void task6()
+void task5()
 {
     string password;
 
@@ -118,7 +108,7 @@ void task6()
 }
 
 //Program sprawdzaj¹cy czy podana data jest poprawna (np. sprawdzaj¹c, czy dzieñ jest z zakresu od 1 do 31, miesi¹c od 1 do 12 itd.)
-void task7()
+void task6()
 {
     int day, month, year;
 
@@ -129,47 +119,162 @@ void task7()
     cout << "input year \n";
     cin >> year;
 
-    if (month == 2)
+    if (year > 0)
     {
-        if (day > 0 && day < 29)
+        if (month > 0 && month <= 12)
         {
-
-            if (year >= 0)
+            if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
             {
-                cout << "the date is correct \n";
+                if (day > 0 && day <= 31)
+                {
+                    cout << "the date is correct \n";
+                }
+                else
+                {
+                    cout << "the day is incorrect \n";
+                }
+            }
+
+            else if (month == 4 || month == 6 || month == 9 || month == 11)
+            {
+                if (day > 0 && day <= 30)
+                {
+                    cout << "the date is correct \n";
+                }
+            }
+            else if (month == 2)
+            {
+                if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
+                {
+                    if (day > 0 && day <= 29)
+                    {
+                        cout << "the date is correct \n";
+                    }
+                    else
+                    {
+                        cout << "the date is incorrect \n";
+                    }
+                }
+                else 
+                {
+                    if (day > 0 && day <= 28)
+                    {
+                        cout << "the date is correct \n";
+                    }
+                    else
+                    {
+                        cout << "the date is incorrect \n";
+                    }
+                }
             }
             else
             {
-                cout << "the date is incorrect \n";
+                cout << "the month is incorrect \n";
             }
         }
         else
         {
-            cout << "the date is incorrect \n";
+            cout << "the month is incorrect \n";
         }
     }
-    else if (month > 0 && month < 13)
+    else
     {
-        if (month == 1, 3, 5, 7, 8, 10, 12);
+        cout << "the year is less then 0 \n";
+    }
+}
+
+// Program wyœwietlaj¹cy odpowiedni komunikat w zale¿noœci od podanej temperatury (np. "ciep³o" dla temperatury powy¿ej 20 stopni Celsjusza, "ch³odno" dla temperatury poni¿ej 10 stopni Celsjusza itd.)
+void task7()
+{
+    double temp;
+
+    cout << "podaj temperature \n";
+    cin >> temp;
+
+    if (temp >= 27)
+        cout << "gor¹co";
+    else if (temp >= 20)
+        cout << "ciep³o";
+    else if (temp >= 10)
+        cout << "umiarkowanie";
+    else if (temp >= 0)
+        cout << "zimno";
+    else if (temp >= -10)
+        cout << "mroŸno";
+    else
+        cout << "za zimno";
+}
+
+//Program sprawdzj¹cy czy podana liczba jest z przedia³u < 1; 15)
+void task8()
+{
+    double number;
+
+    cout << "input number \n";
+    cin >> number;
+
+    if (number >= 0 && number < 15)
+    {
+        cout << "the number is within <1;15) \n";
+    }
+    else
+    {
+        cout << "the number isn't within <1;15) \n";
+    }
+}
+
+//Program sprawdzaj¹cy czy osoba jest pe³noletnia.
+void task9()
+{
+    int yearOfBirth;
+
+    cout << "when were you born? \n";
+    cin >> yearOfBirth;
+    
+    if (yearOfBirth <= 2005)
+    {
+        cout << "You are an adult \n";
+    }
+    else
+    {
+        cout << "You are not an adult \n";
+    }
+}
+
+//Program, który sprawdzi czy z podanych d³ugoœci boków mo¿na zrobiæ trójk¹t.
+void task10()
+{
+    double a;
+    double b;
+    double c;
+
+    cout << "input lengh of side a \n";
+    cin >> a;
+    cout << "input lengh of side b \n";
+    cin >> b;
+    cout << "input lengh of side c \n";
+    cin >> c;
+
+    if (a + b > c && a + c > b && b + c > a)
+    {
+        cout << "triangle with sides of lengh: " << a << ", " << b << ", " << c << "\nis correct\n";
+    }
+    else
+    {
+        cout << "A triangle with sides of lengh: " << a << ", " << b << ", " << c << "\ndoes not exist \n";
     }
 }
 
 void test()
 {
-    int month;
-    cin >> month;
-    if (month == 12)
-    {
-        cout << "the month has 31 days";
-    }
-    else
-    cout << "the date is incorrect \n";
+
 }
 
 int main()
 {
     setlocale(LC_CTYPE, "polish");
 
+    //task0
     //task1();
     //task2();
     //task3();
@@ -177,5 +282,8 @@ int main()
     //task5();
     //task6();
     //task7();
-    test();
+    //task8();
+    //task9();
+    //task10();
+    //test();
 }
