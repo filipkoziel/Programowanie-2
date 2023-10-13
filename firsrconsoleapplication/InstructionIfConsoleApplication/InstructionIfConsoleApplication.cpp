@@ -1,6 +1,15 @@
 #include <iostream>
+#include <math.h>
 
 using namespace std;
+
+
+/*
+11. 
+12. 
+13. Napisz program, który na podstawie wspó³czynników równania kwadratowego(a, b, c) sprawdzi, czy to równanie ma rozwi¹zania rzeczywiste, i jeœli tak, to je obliczy.
+*/
+
 
 
 //Napisz funkcjê, która podzieli dwie liczby.
@@ -244,25 +253,158 @@ void task9()
 //Program, który sprawdzi czy z podanych d³ugoœci boków mo¿na zrobiæ trójk¹t.
 void task10()
 {
-    double a;
-    double b;
-    double c;
+    double bokA;
+    double bokB;
+    double bokC;
 
     cout << "input lengh of side a \n";
-    cin >> a;
+    cin >> bokA;
     cout << "input lengh of side b \n";
-    cin >> b;
+    cin >> bokB;
     cout << "input lengh of side c \n";
-    cin >> c;
+    cin >> bokC;
 
-    if (a + b > c && a + c > b && b + c > a)
+    if (bokA + bokB > bokC && bokA + bokC > bokB && bokB + bokC > bokA)
     {
-        cout << "triangle with sides of lengh: " << a << ", " << b << ", " << c << "\nis correct\n";
+        cout << "triangle with sides of lengh: " << bokA << ", " << bokB << ", " << bokC << "\nis correct\n";
     }
     else
     {
-        cout << "A triangle with sides of lengh: " << a << ", " << b << ", " << c << "\ndoes not exist \n";
+        cout << "A triangle with sides of lengh: " << bokA << ", " << bokB << ", " << bokC << "\ndoes not exist \n";
     }
+}
+
+// Napisz program, który bêdzie dzia³aæ jako prosty kalkulator matematyczny, umo¿liwiaj¹c u¿ytkownikowi wybór operacji(dodawanie, odejmowanie, mno¿enie, dzielenie) i wprowadzanie liczb do obliczeñ.
+void task11()
+{
+    int numOperacii;
+
+    cout << "Kalkulator: \n1.Dodawanie \n2.Odejmowanie \n3.Mno¿enie \n4.Dzielenie \nWypisz numer operacij któr¹ chcesz wykonaæ\n";
+
+    cin >> numOperacii;
+
+    if (numOperacii == 1)
+    {
+        int num1, num2;
+
+        cout << "wprowadŸ dwa numery do dodania\n\n";
+
+        cout << "numer 1:\n";
+        cin >> num1;
+        cout << "numer 2:\n";
+        cin >> num2;
+
+        cout << "suma tych liczb to: " << num1 + num2 << "\n";
+    }
+    else if (numOperacii == 2)
+    {
+        int num1, num2;
+
+        cout << "wprowadŸ dwa numery do odjencia\n\n";
+
+        cout << "numer 1:\n";
+        cin >> num1;
+        cout << "numer 2:\n";
+        cin >> num2;
+
+        cout << "ró¿nica tych liczb to: " << num1 - num2 << "\n";
+    }
+    else if (numOperacii == 3)
+    {
+        int num1, num2;
+
+        cout << "wprowadŸ dwa numery do mno¿enia\n\n";
+
+        cout << "numer 1:\n";
+        cin >> num1;
+        cout << "numer 2:\n";
+        cin >> num2;
+
+        cout << "iloczyn tych liczb to: " << num1 * num2 << "\n";
+    }
+    else if (numOperacii == 4)
+    {
+        int num1, num2;
+
+        cout << "wprowadŸ dwa numery do dzielenia\n\n";
+
+        cout << "numer 1:\n";
+        cin >> num1;
+        cout << "numer 2:\n";
+        cin >> num2;
+
+        cout << "iloraz tych liczb to: " << num1 / num2 << "\n";
+    }
+    else
+    {
+        cout << "nie ma takiej opcij!!\n";
+    }
+}
+
+//Napisz program, który wczyta numer miesi¹ca i wyœwietli jego s³owny odpowiednik.
+void task12()
+{
+    int numerMiesi¹ca;
+
+    cout << "Podaj numer miesi¹ca\n";
+    cin >> numerMiesi¹ca;
+
+    switch (numerMiesi¹ca)
+    {
+    case 1:
+        cout << "styczeñ\n";
+        break;
+    case 2:
+        cout << "luty\n";
+        break;
+    case 3:
+        cout << "marzec\n";
+        break;
+    case 4:
+        cout << "kwiecieñ\n";
+        break;
+    case 5:
+        cout << "maj\n";
+        break;
+    case 6:
+        cout << "czerwiec\n";
+        break;
+    case 7:
+        cout << "lipiec\n";
+        break;
+    case 8:
+        cout << "sierpieñ\n";
+        break;
+    case 9:
+        cout << "wrzesieñ\n";
+        break;
+    case 10:
+        cout << "paŸdziernik\n";
+        break;
+    case 11:
+        cout << "listopad\n";
+        break;
+    case 12:
+        cout << "grudzieñ\n";
+        break;
+    default:
+        cout << "nie ma takiego miesi¹ca\n";
+    }
+}
+
+// Napisz program, który na podstawie wspó³czynników równania kwadratowego(a, b, c) sprawdzi, czy to równanie ma rozwi¹zania rzeczywiste, i jeœli tak, to je obliczy.
+void task13()
+{
+    int a, b, c;
+
+    cout << "wprowadŸ liczbe a do równania kwadratowego\n";
+    cin >> a;
+    cout << "wprowadŸ liczbe b do równania kwadratowego\n";
+    cin >> b;
+    cout << "wprowadŸ liczbe c do równania kwadratowego\n";
+    cin >> c;
+
+    // a * pow(x, 2) + b * x + c
 }
 
 void test()
@@ -285,5 +427,7 @@ int main()
     //task8();
     //task9();
     //task10();
+    //task11();
+    task13();
     //test();
 }
