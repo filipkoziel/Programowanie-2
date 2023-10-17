@@ -395,9 +395,9 @@ void task12()
 // Napisz program, który na podstawie wspó³czynników równania kwadratowego(a, b, c) sprawdzi, czy to równanie ma rozwi¹zania rzeczywiste, i jeœli tak, to je obliczy.
 void task13()
 {
-    int a, b, c;
+    double a, b, c, x;
 
-    cout << "wprowadŸ liczbe a do równania kwadratowego\n";
+    cout << "wprowadŸ liczbe a do równania kwadratowego, a nie mo¿e byæ równe 0\n";
     cin >> a;
     cout << "wprowadŸ liczbe b do równania kwadratowego\n";
     cin >> b;
@@ -405,6 +405,32 @@ void task13()
     cin >> c;
 
     // a * pow(x, 2) + b * x + c
+
+    double delta = pow(b, 2) - 4 * a * c;
+
+
+    if (delta == 0)
+    {
+        double result = (b*(-1)) / (2 * a);
+
+        cout << "Takie równanie kwadratowe ma jedno rozwi¹zanie:\n";
+        cout << result << "\n";
+    }
+    else if ( delta > 0)
+    {
+        double result1, result2;
+        result1 = (((-1) * b) - sqrt(delta)) / (2 * a);
+        result2 = (((-1) * b) + sqrt(delta)) / (2 * a);
+
+        cout << "Takie równanie kwadratowe ma dwa rozwi¹zania.\n";
+        cout << result1 << "\n";
+        cout << result2 << "\n";
+    }
+    if (delta < 0 || a == 0)
+    {
+        cout << "Takie równanie kwadratowe nie ma rozwi¹zañ.\n";
+    }
+
 }
 
 void test()
