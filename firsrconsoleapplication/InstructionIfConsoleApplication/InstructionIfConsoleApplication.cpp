@@ -411,12 +411,12 @@ void task13()
 
     if (delta == 0)
     {
-        double result = (b*(-1)) / (2 * a);
+        double result = (b * (-1)) / (2 * a);
 
         cout << "Takie równanie kwadratowe ma jedno rozwi¹zanie:\n";
         cout << result << "\n";
     }
-    else if ( delta > 0)
+    else if (delta > 0)
     {
         double result1, result2;
         result1 = (((-1) * b) - sqrt(delta)) / (2 * a);
@@ -426,7 +426,7 @@ void task13()
         cout << result1 << "\n";
         cout << result2 << "\n";
     }
-    if (delta < 0 || a == 0)
+    else (delta < 0 || a == 0);
     {
         cout << "Takie równanie kwadratowe nie ma rozwi¹zañ.\n";
     }
