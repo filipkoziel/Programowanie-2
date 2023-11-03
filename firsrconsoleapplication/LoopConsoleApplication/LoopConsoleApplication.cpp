@@ -1,6 +1,7 @@
 ﻿
 #include <iostream>
 #include <time.h>
+#include <cmath>
 
 using namespace std;
 
@@ -100,15 +101,15 @@ void task4()
 // Napisz program, który policzy sumę cyfr podanej przez użytkownika liczby.
 void task1DoWhile()
 {
-    int numberFromUser, sum = 0, store;
+    int numberFromUser, sum = 0, storage;
 
     cout << "input number\n";
     cin >> numberFromUser;
 
     do
     {
-        store = numberFromUser % 10;
-        sum = sum + store;
+        storage = numberFromUser % 10;
+        sum = sum + storage;
         numberFromUser = numberFromUser / 10;
     } while (numberFromUser > 0);
 
@@ -118,11 +119,136 @@ void task1DoWhile()
 // Program wyświetlający na ekranie kwadraty liczb od 1 do 10 (np. 1, 4, 9, 16 itd.) dopóki suma tych kwadratów nie przekroczy 1000.
 void task2DoWhile()
 {
+    double sum = 0, numberSquared, number = 1;
 
+    do
+    {
+        cout << number << " squared is: ";
+        sum = sum + pow(number, 2);
+        numberSquared = pow(number, 2);
+        cout << numberSquared;
+        number++;
+
+        cout << "       (sum of all squares to this point is: " << sum << ")\n";
+    } while (sum < 1000);
+}
+
+
+
+
+// ZADANIA 
+// WHILE
+
+// Miasto T. ma obecnie 100 tys. mieszkańców, ale jego populacja rośnie co roku o 3% rocznie. Miasto B. ma 300 tys. mieszkańców i ta liczba rośnie w tempie 2% na rok. Wykonaj symulację prezentującą liczbę mieszkańców w obu miastach i zatrzymującą się, gdy liczba mieszkańców miasta T. przekroczy liczbę z miasta B.
+void task1While()
+{
+    double populationOfT = 100000, populationOfB = 300000;
+
+    while (populationOfB > populationOfT)
+    {
+        populationOfB = populationOfB + populationOfB  * 0.02;
+        populationOfT = populationOfT + populationOfT * 0.03;
+
+        cout << "populacja miasta B: " << populationOfB << "\npopulacja miasta T: " << populationOfT << "\n";
+    }
+}
+
+//Napisz program, który poprosi użytkownika o wprowadzenie dowolnej liczby całkowitej. Następnie program powinien obliczyć i wyświetlić liczbę cyfr.
+void task2While()
+{
+    int numberFromUser, numberOfDigits = 0;
+
+    cout << "input an integer\n";
+    cin >> numberFromUser;
+
+    while (numberFromUser > 0)
+    {
+        numberFromUser = numberFromUser / 10;
+        numberOfDigits++;
+    }
+
+    cout << "the number of digits is: " << numberOfDigits;
+}
+
+// Program sprawdzający czy podana liczba jest liczbą doskonałą (czyli taką, której suma dzielników (z wyłączeniem samej siebie) jest równa danej liczbie, np. 6 jest liczbą doskonałą, ponieważ 1 + 2 + 3 = 6).
+void task3While()
+{
+    int numberFromUser, number = 1, sum = 0;
+
+    cout << "input an integer\n";
+    cin >> numberFromUser;
+
+    while (numberFromUser > number)
+    {
+        if (numberFromUser % number == 0)
+        {
+            sum = sum + number;
+        }
+        number++;
+    }
+
+    if (sum == numberFromUser)
+    {
+        cout << "The number is a perfect number\n";
+    }
+    else
+    {
+        cout << "the number wasn't a perfect number\n";
+    }
+}
+
+
+
+
+// ZADANIA
+// FOR
+
+// Program wyświetlający na ekranie kolejne liczby naturalne od 1 do 10
+void task1For()
+{
+    for (int i = 1; i <= 10; i++)
+    {
+        cout << i << "\n";
+    }
+}
+
+// Program obliczający sumę liczb od 1 do 100
+void task2For()
+{
+    for (int i = 1, sum = 0; i <= 100; i++)
+    {
+        cout << sum << " + " << i << " = ";
+        sum = sum + i;
+        cout << sum << "\n";
+    }   
+}
+
+// Program wyświetlający na ekranie kwadraty liczb od 1 do 10 (np. 1, 4, 9, 16 itd.)
+void task3For()
+{
+    for (int i = 1; i <= 10; i++)
+    {
+        cout << i << " ^ 2 = " << pow(i, 2) << "\n";
+    }
+}
+
+// Program obliczający n!
+void task4For()
+{
+    int numberFromUser, factorial = 1;
+
+    cout << "input a number\n";
+    cin >> numberFromUser;
+
+    for (int i = 1; i <= numberFromUser; i++)
+    {
+        factorial = factorial * i;
+    }
+    cout << numberFromUser << " factorial is: " << factorial << "\n";
 }
 
 int main()
 {
-    task2DoWhile();
+    task4For();
 }
 
