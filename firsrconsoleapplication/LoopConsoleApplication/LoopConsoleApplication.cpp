@@ -247,8 +247,132 @@ void task4For()
     cout << numberFromUser << " factorial is: " << factorial << "\n";
 }
 
+//Program wyświetlający na ekranie silnie z liczb od 1 do 10 (np. 1!, 2!, 3!, 4! itd.)
+void task5For()
+{
+
+    for (int i = 1, factorial = 1; i <= 10; i++)
+    {
+        factorial = factorial * i;
+        cout << i << " factorial is: " << factorial << "\n";
+    }
+}
+
+//Program wyświetlający na ekranie tabliczkę mnożenia od 1 do 9 (np. 1x1=1, 1x2=2, 1x3=3 itd.).
+void task6For()
+{
+    for (int number1 = 1, i = 1; i <= 9; i++)
+    {
+        for (int result, number2 = 1, j = 1; j <= 10; j++)
+        {
+            result = number1 * number2;
+            cout << number1 << " * " << number2 << " = " << result << "\n";
+            number2++;
+        }
+        number1++;
+        cout << "\n";
+    }
+}
+
+// Program wyświetlający na ekranie wszystkie liczby podzielne przez 3 z zakresu od 1 do 100
+void task7For()
+{
+    for (int i = 3; i <= 100; i = i = i+3)
+    {
+        cout << i << ", ";
+    }
+}
+
+//Program obliczający sumę kwadratów liczb od 1 do 10
+void task8For()
+{
+    for (int i = 1, sum = 0; i <= 10; i++)
+    {
+        cout << sum;
+        sum = sum + pow(i, 2);
+        cout << " + " << pow(i, 2) << " = " << sum << "\n";
+    }
+}
+
+//Program wyświetlający na ekranie ciąg Fibonacciego do 20 elementu (ciąg Fibonacciego to ciąg gdzie każdy element jest sumą dwóch poprzednich, np. 0, 1, 1, 2, 3, 5, 8, 13 itd.)
+void task9For()
+{
+    cout << "0, 1, ";
+    int fib2 = 0, fib1 = 1;
+    for (int i = 0; i <= 17; i++)
+    {
+        int fib = fib2 + fib1;
+        cout << fib << ", ";
+        fib2 = fib1;
+        fib1 = fib;
+    }
+}
+
+/* Program, kóry wyświetli poniższe cztery zwory :
+    ****     54321        121212        122333
+    ***      65432        212121        223334444
+    **       76543        121212        333444455555
+    *        87654        212121        444455555666666 */
+void task10For()
+{
+    for (int lineNumber = 0; lineNumber < 4; lineNumber++)
+    {
+        for (int numberOfStar = 0; numberOfStar < 4 - lineNumber; numberOfStar++)
+        {
+            cout << "*";
+        }
+        cout << "\n";
+    }
+
+    cout << "\n";
+
+    for (int i = 0, number = 5; i < 4; i++)
+    {
+        for (int j = 0; j < 5; j++)
+        {
+
+            cout << number;
+            number--;
+        }
+        cout << "\n";
+        number = number + 6;
+    }
+
+    cout << "\n";
+
+    for (int i = 0, number = 1; i < 4; i++)
+    {
+        for (int j = 0; j < 6; j++)
+        {
+            if (number == 1)
+            {
+                cout << number;
+                number = 2;
+            }
+            else
+            {
+                cout << number;
+                number = 1;
+            }
+        }
+        cout << "\n";
+        if (number == 1)
+        {
+            number = 2;
+        }
+        else
+        {
+            number = 1;
+        }
+    }
+
+    cout << "\n";
+
+    // CZWARTA WYMAGA 3 PENTLI PAMIENTAJ!!!!!!
+}
+
 int main()
 {
-    task4For();
+    task10For();
 }
 
