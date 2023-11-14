@@ -386,19 +386,40 @@ void task10For()
 // Oblicz sumę szeregu 1/1^2 + 1/2^2 + 1/3^2 + ... +1/n^2. Jeżeli się nie pomylisz, to dla odpowiednio dużej wartości n po przemnożeniu jej przez 6 i spierwiastkowaniu powinieneś otrzymać wartość liczby π (suma szeregu jest równa π2/6). Zwróć uwagę, że pierwsza wartość indeksu to 1, a nie 0. Dokładność obliczeń można sprawdzić porównując z wartością odczytaną z własności Math.PI.
 void task11For()
 {
-    int n = 20;
+    int n = 5;
+    double sum = 0;
 
-    for (double i = 1, sum = 0; n > i; i++)
+    for (double i = 1; n > i; i++)
     {
         sum = sum + 1 / (i * i);
     }
 
+    cout << "suma " << sum << "\n";
 
+}
 
+void taskWhat()
+{
+    int numberOfDigits = 1;
+    int upperRange = 10;
+    int number;
+    
+    cout << "input number\n";
+    cin >> number;
+
+    number = abs(number);
+
+    while (number > upperRange)
+    {
+        numberOfDigits++;
+        upperRange = upperRange * 10;
+    }
+
+    cout << numberOfDigits;
 }
 
 int main()
 {
-    task11For();
+    taskWhat();
 }
 
