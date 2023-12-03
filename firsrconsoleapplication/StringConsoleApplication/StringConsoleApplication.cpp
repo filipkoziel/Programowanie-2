@@ -159,12 +159,13 @@ void task4Zadania()
 //Program sprawdzaj¹cy czy podane dwa s³owa s¹ anagramami (czyli takimi, które zawieraj¹ te same litery, ale w innym uk³adzie, np. "klasa" i "salka"
 void task5Zadania()
 {
-	string firstString, secondString;
+	string firstString, secondString, stringSpace = " ";
 	int check = 0;
 
 	cout << "Input two strings, the program will chech if they are anagrams\n";
 	cin >> firstString;
 	cin >> secondString;
+	cout << "\n";
 
 	if (firstString.length() != secondString.length())
 	{
@@ -179,6 +180,7 @@ void task5Zadania()
 			{
 				if (firstString[i] == secondString[j])
 				{
+					secondString.replace(j, 1, stringSpace);
 					check++;
 					break;
 				}
