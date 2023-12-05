@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -192,10 +193,42 @@ void task5Zadania()
 		else
 			cout << "It's not an anagram!\n";
 	}
+}
 
+//Program wyci¹gaj¹cy informacje z numeru PESEL
+void task6Zadania()
+{
+	//012345678910
+	//RRMMDDPPPPK
+
+	string pesel, month, gender;
+	int monthInt, genderInt;
+
+	cout << "Input PESEL number\n";
+	cin >> pesel;
+
+	month = pesel[2] + pesel[3];
+	gender = pesel[9];
+
+	if (pesel[2] == '2' || pesel[2] == '3')
+	{
+		cout << "year of birth: 20" << pesel[0] << pesel[1] << "\n";
+		cout << "month of birth: " << stoi(month) - 20 << "\n";
+	}
+	else
+	{
+		cout << "year of birth: 19" << pesel[0] << pesel[1] << "\n";
+		cout << "month of birth: " << pesel[2] << pesel[3] << "\n";
+	}
+
+	cout << "day of birth: " << pesel[4] << pesel[5] << "\n";
+	if (stoi(gender) % 2 == 0)
+		cout << "gender: kobieta\n";
+	else
+		cout << "gender: mêczyzna\n";
 }
 
 int main()
 {
-	task5Zadania();
+	task6Zadania();
 }
