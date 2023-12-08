@@ -207,8 +207,8 @@ void task6Zadania()
 	cout << "Input PESEL number\n";
 	cin >> pesel;
 
-	month = pesel[2] + pesel[3];
-	gender = pesel[9];
+	month = pesel.substr(2,2);
+	gender = pesel.substr(9,1);
 
 	if (pesel[2] == '2' || pesel[2] == '3')
 	{
@@ -223,10 +223,17 @@ void task6Zadania()
 
 	cout << "day of birth: " << pesel[4] << pesel[5] << "\n";
 	if (stoi(gender) % 2 == 0)
-		cout << "gender: kobieta\n";
+		cout << "gender: female\n";
 	else
-		cout << "gender: mêczyzna\n";
+		cout << "gender: male\n";
 }
+
+// Program implementuj¹cy algorytm szyfrowania Cezara (proste szyfrowanie, w którym ka¿dy znak w tekœcie jest zastêpowany innym znakiem, przesuniêtym o sta³¹ liczbê pozycji w alfabecie).
+void task7Zadania()
+{
+
+}
+
 
 int main()
 {
