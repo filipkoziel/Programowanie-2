@@ -117,6 +117,40 @@ void task1()
     }
 }
 
+void minimumAndMaximum()
+{
+    const int SIZE_OF_ARRAY = 100;
+    int numbers[SIZE_OF_ARRAY];
+
+    srand(time(NULL));
+
+    for (int i = 0; i < 100; i++)
+    {
+        numbers[i] = rand();
+    }
+
+    // maximum
+    int max = numbers[0];
+    for (int i = 1; i < SIZE_OF_ARRAY; i++)
+    {
+        if (numbers[i] > max)
+        {
+            max = numbers[i];
+        }
+    }
+
+    // minimum
+    int min = numbers[0];
+    for (int i = 1; i < SIZE_OF_ARRAY; i++)
+    {
+        if (numbers[i] < min)
+        {
+            min = numbers[i];
+        }
+    }
+}
+
+
 int main()
 {
     taskBored();
