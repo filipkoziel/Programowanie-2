@@ -5,7 +5,6 @@ using namespace std;
 
 void taskBored()
 {
-    //wczytujemy 100 liczb do array i je mieszamy
     int numbers[100];
 
     for (int i = 0; i < 100; i++)
@@ -119,14 +118,17 @@ void task1()
 
 void minimumAndMaximum()
 {
-    const int SIZE_OF_ARRAY = 100;
+    const int SIZE_OF_ARRAY = 5;
     int numbers[SIZE_OF_ARRAY];
+
+    const int UPPER_RANGE = 100;
+    const int LOWER_RANGE = 5;
 
     srand(time(NULL));
 
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < SIZE_OF_ARRAY; i++)
     {
-        numbers[i] = rand();
+        numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
     }
 
     // maximum
@@ -148,10 +150,53 @@ void minimumAndMaximum()
             min = numbers[i];
         }
     }
+
+    cout << "min: " << min << "\n" << "max: " << max << "\n";
+
+    // average
+    int sum = 0;
+    for (int i = 1; i < SIZE_OF_ARRAY; i++)
+    {
+        sum = sum + numbers[i];
+    }
+
+    double average = sum * 1.0 / SIZE_OF_ARRAY;
+    cout << "avg: " << average << "\n";
 }
 
+// napisz program która wylicza iloœæ wyst¹pieñ danej liczby w tablicy.
+void countHowMany()
+{
+    const int SIZE_OF_ARRAY = 10;
+    int numbers[SIZE_OF_ARRAY];
+
+    const int UPPER_RANGE = 8;
+    const int LOWER_RANGE = 5;
+
+    srand(time(NULL));
+
+    for (int i = 0; i < SIZE_OF_ARRAY; i++)
+    {
+        numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
+        cout << numbers[i] << "\n";
+    }
+
+    int counter = 0;
+    for (int numbersFromRange = LOWER_RANGE; numbersFromRange <= UPPER_RANGE; numbersFromRange++)
+    {
+        for (int j = 0; j < SIZE_OF_ARRAY; j++)
+        {
+            if (numbers[j] == numbersFromRange)
+            {
+                counter++;
+            }
+        }
+        cout << numbersFromRange << " occured " << counter << " times\n";
+        counter = 0;
+    }
+}
 
 int main()
 {
-    taskBored();
+    countHowMany();
 }
