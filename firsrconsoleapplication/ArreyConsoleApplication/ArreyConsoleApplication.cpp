@@ -121,7 +121,7 @@ void minimumAndMaximum()
     const int SIZE_OF_ARRAY = 5;
     int numbers[SIZE_OF_ARRAY];
 
-    const int UPPER_RANGE = 100;
+    const int UPPER_RANGE = 8;
     const int LOWER_RANGE = 5;
 
     srand(time(NULL));
@@ -167,20 +167,22 @@ void minimumAndMaximum()
 // napisz program która wylicza iloœæ wyst¹pieñ danej liczby w tablicy.
 void countHowMany()
 {
-    const int SIZE_OF_ARRAY = 10;
+    const int SIZE_OF_ARRAY = 10000;
     int numbers[SIZE_OF_ARRAY];
 
-    const int UPPER_RANGE = 8;
-    const int LOWER_RANGE = 5;
+    const int UPPER_RANGE = 100;
+    const int LOWER_RANGE = 0;
 
     srand(time(NULL));
 
     for (int i = 0; i < SIZE_OF_ARRAY; i++)
     {
         numbers[i] = rand() % (UPPER_RANGE - LOWER_RANGE + 1) + LOWER_RANGE;
-        cout << numbers[i] << "\n";
     }
 
+    cout << "\n\n";
+
+    //wersja 1
     int counter = 0;
     for (int numbersFromRange = LOWER_RANGE; numbersFromRange <= UPPER_RANGE; numbersFromRange++)
     {
@@ -194,9 +196,30 @@ void countHowMany()
         cout << numbersFromRange << " occured " << counter << " times\n";
         counter = 0;
     }
+
+    cout << "\n\n";
+
+    // wersja 2
+    int numbersOfOccurences[UPPER_RANGE - LOWER_RANGE + 1];
+    for (int i = 0; i < UPPER_RANGE - LOWER_RANGE + 1; i++)
+    {
+        numbersOfOccurences[i] = 0;
+    }
+
+    for (int j = 0; j < SIZE_OF_ARRAY; j++)
+    {
+        numbersOfOccurences[numbers[j] - LOWER_RANGE]++;
+    }
+
+    for (int i = 0; i < UPPER_RANGE - LOWER_RANGE + 1; i++)
+    {
+        cout << i + LOWER_RANGE << " occured " << numbersOfOccurences[i] << " times\n";
+    }
 }
+
+
 
 int main()
 {
-    countHowMany();
+    taskBored();
 }
