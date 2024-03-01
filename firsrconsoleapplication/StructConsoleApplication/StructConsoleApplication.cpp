@@ -13,7 +13,7 @@ struct point
 double DistanceFromZero(int x, int y, int z)
 {
 	double distance;
-	distance = sqrt(x * x + y * y);
+	distance = sqrt(x * x + y * y + z * z);
 	return distance;
 }
 
