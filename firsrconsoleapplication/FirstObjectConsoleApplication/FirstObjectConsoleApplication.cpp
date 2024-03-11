@@ -37,6 +37,13 @@ public:
 		cout << "Teraz dzia³a destruktor\n";
 	}
 
+	Point(Point &p)
+	{
+		x = p.x;
+		y = p.y;
+		z = p.z;
+	}
+
 	void SetX(int value)
 	{
 		//x = abs(value);
