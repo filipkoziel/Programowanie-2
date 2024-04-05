@@ -1,4 +1,4 @@
-#include <iostream>
+ #include <iostream>
 
 using namespace std;
 
@@ -29,8 +29,8 @@ public:
 
     void ShowInfo()
     {
-        std::cout << "Informacja na temat klasy "<< name <<"\n";
-        std::cout << "Field A = " << fieldA << "\n";
+        cout << "Informacja na temat klasy "<< name <<"\n";
+        cout << "Field A = " << fieldA << "\n";
     }
 };
 
@@ -47,8 +47,8 @@ public:
     /*
         void ShowInfo()
     {
-        std::cout << "Informacja na temat klasy A\n";
-        std::cout << "Field A = " << fieldA << "\n";
+        cout << "Informacja na temat klasy A\n";
+        cout << "Field A = " << fieldA << "\n";
     }
     */
 };
@@ -75,14 +75,12 @@ public:
         return fieldB;
     }
 
-    /*
+    
     void ShowInfo()
     {
-        std::cout << "Informacja na temat klasy B\n";
-        std::cout << "Field A = " << fieldA << "\n";
-        std::cout << "Field B = " << fieldB << "\n";
+        C::ShowInfo();
+        cout << "Field B = " << fieldB << "\n";
     }
-    */
 
 };
 
