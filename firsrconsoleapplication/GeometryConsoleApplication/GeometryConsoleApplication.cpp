@@ -2,8 +2,6 @@
 
 using namespace std;
 
-// napisz klasy, które bêd¹ opisywaæ kwadrat, prostok¹t, trapez
-
 class Quadrangle
 {
 protected:
@@ -78,15 +76,6 @@ public:
 
 int main()
 {
-	Quadrangle q(3, 2, 5, 4, 2);
 
-	Recangle r(10,5);
-	cout << r.GetArea() << "\n";
-	
-	Square s(6);
-	cout << s.GetArea() << "\n";
-
-	Trapeze t(10, 6, 4, 5, 3);
-	cout << t.GetArea() << "\n";
 }
 
