@@ -23,12 +23,12 @@ public:
 	}
 };
 
-class Recangle:public Quadrangle
+class Rectangle:public Quadrangle
 {
 protected:
 
 public:
-	Recangle(double firstSide, double secondSide) : Quadrangle(firstSide, secondSide, firstSide, secondSide, secondSide)
+	Rectangle(double firstSide, double secondSide) : Quadrangle(firstSide, secondSide, firstSide, secondSide, secondSide)
 	{
 		//sideA = sideC = firstSide;
 		//sideB + sideD = secondSide;
@@ -41,12 +41,12 @@ public:
 
 };
 
-class Square :public Recangle
+class Square :public Rectangle
 {
 protected:
 
 public:
-	Square(double side) : Recangle(side, side)
+	Square(double side) : Rectangle(side, side)
 	{
 		//sideA = sideB = sideC = sideD = side;
 	}
@@ -76,6 +76,18 @@ public:
 
 int main()
 {
+	Quadrangle q(3, 2, 5, 4, 2);
 
+	Rectangle r(10, 5);
+	std::cout << r.GetArea() << "\n";
+	std::cout << r.GetPerimeter() << "\n";
+
+	Square s(6);
+	std::cout << s.GetArea() << "\n";
+	std::cout << s.GetPerimeter() << "\n";
+
+	Trapeze t(10, 6, 4, 5, 3);
+	std::cout << t.GetArea() << "\n";
+	std::cout << t.GetPerimeter() << "\n";
 }
 
