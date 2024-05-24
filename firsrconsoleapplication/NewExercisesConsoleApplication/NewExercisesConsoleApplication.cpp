@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <ctime>
 
 
 using namespace std;
@@ -8,7 +9,7 @@ class Count
 {
 private:
     double value;
-    
+
 public:
     Count()
     {
@@ -146,9 +147,36 @@ public:
     }
 };
 
+class Date
+{
+private:
+    time_t date = time(NULL);
+    char buffer[26];
+
+public:
+    string ReturnLocalTime()
+    {
+        ctime_s(buffer, sizeof(buffer), &date);
+        return buffer;
+    }
+
+    string ReturnTimeForwardWeek()
+    {
+        //nie wiem
+    }
+
+    string ReturnTimeBackwardWeek()
+    {
+        //nie wiem
+    }
+
+};
+
 int main()
 {
     // zadanie 1
+
+    cout << "zadanie 1\n";
 
     Count countA, countB(5), countC(16);
 
@@ -161,6 +189,8 @@ int main()
     countC.Subtract(20);
 
     // zadanie 2
+
+    cout << "\n\nzadanie 2\n";
 
     Adder addA, addB(12);
 
@@ -176,12 +206,25 @@ int main()
 
     // zadanie 3
 
+    cout << "\n\nzadanie 3\n";
+
     Person a("filip", "kozie³", 16);
 
     a.Write();
 
+
     Person author("Antoine", "de Saint-Exupéry", 44);
     Book b("ma³y ksi¹¿e", author, 1943);
+
     b.Write();
+
+    // zadanie 4
+
+    cout << "\n\n zadanie 4\n";
+
+    Date localTime;
+    cout << localTime.ReturnLocalTime();
+
+
 }
 
