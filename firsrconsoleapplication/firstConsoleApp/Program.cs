@@ -28,8 +28,24 @@ void ParameterTest_v2(ref int p)
     p++;
     Console.WriteLine($"ParameterTest_v2: p = {p}");
 }
+
+void ParameterTest_v3(out int p)
+{
+    p = 9;
+    p++;
+    Console.WriteLine($"ParameterTest_v2: p = {p}");
+}
+
 ParameterTest_v1(number);
 Console.WriteLine($"number = {number}");
 
 ParameterTest_v2(ref number);
 Console.WriteLine($"number = {number}");
+
+
+
+int thirdNumber;
+ParameterTest_v3(out thirdNumber);
+Console.WriteLine($"thirdnumber = {thirdNumber}");
+
+//-------------------------------------------------------------------------
