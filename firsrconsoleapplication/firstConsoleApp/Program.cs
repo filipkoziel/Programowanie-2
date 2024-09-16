@@ -49,3 +49,9 @@ ParameterTest_v3(out thirdNumber);
 Console.WriteLine($"thirdnumber = {thirdNumber}");
 
 //-------------------------------------------------------------------------
+Console.WriteLine("podaj liczbe");
+string strNumber = Console.ReadLine()!;
+
+int convertNumber;
+if (int.TryParse(strNumber, out convertNumber))
+    Console.WriteLine($"dwa razy wieksza podana liczba: {convertNumber * 2}");
