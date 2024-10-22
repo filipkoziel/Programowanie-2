@@ -1,6 +1,7 @@
 ﻿
 // int[] intArray = new int[10];
 
+using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 
 List<int> intsCollecion = new List<int>();
@@ -91,9 +92,12 @@ List<int> FilterCollection(List<int> collection, Func<int, bool> check)
     return returnCollection;
 }
 
-List<int> result1 = FilterCollection(intsCollecion, i => i > 10);
-List<int> result2 = FilterCollection(intsCollecion, i => i >= 5 && i <= 7);
-List<int> result3 = FilterCollection(intsCollecion, i => i % 2 == 0);
+List<int> result = FilterCollection(intsCollecion, i => i > 10);
+result = FilterCollection(intsCollecion, i => i >= 5 && i <= 7);
+result = FilterCollection(intsCollecion, i => i % 2 == 0);
+
+result = intsCollecion.Where(i => i % 2 == 0).ToList();
+result = intsCollecion.OrderBy(i => i).ToList();
 
 Func<int, bool> func1;
 func1 = (int i) => { return i % 2 == 0; };
