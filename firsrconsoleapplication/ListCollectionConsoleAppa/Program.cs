@@ -74,10 +74,19 @@ bool from5To7(int number)
     return number >= 5 && number <= 7;
 }
 
-bool even(int number)
+bool even1(int number)
 {
     return number % 2 == 0;
 }
+
+Func<int, bool> even;
+even = i => i % 2 == 0;
+
+List<int> result = FilterCollection(intsCollecion, i => i > 10);
+result = FilterCollection(intsCollecion, i => i >= 5 && i <= 7);
+result = FilterCollection(intsCollecion, i => i % 2 == 0);
+
+result = intsCollecion.Where(i => i % 2 == 0).ToList();
 
 List<int> FilterCollection(List<int> collection, Func<int, bool> check)
 {
@@ -92,12 +101,7 @@ List<int> FilterCollection(List<int> collection, Func<int, bool> check)
     return returnCollection;
 }
 
-List<int> result = FilterCollection(intsCollecion, i => i > 10);
-result = FilterCollection(intsCollecion, i => i >= 5 && i <= 7);
-result = FilterCollection(intsCollecion, i => i % 2 == 0);
 
-result = intsCollecion.Where(i => i % 2 == 0).ToList();
-result = intsCollecion.OrderBy(i => i).ToList();
 
 Func<int, bool> func1;
 func1 = (int i) => { return i % 2 == 0; };
