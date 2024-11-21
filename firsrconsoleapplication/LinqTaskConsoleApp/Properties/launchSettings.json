@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "LinqTaskConsoleApp": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

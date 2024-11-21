@@ -42,8 +42,6 @@ Console.WriteLine($"number = {number}");
 ParameterTest_v2(ref number);
 Console.WriteLine($"number = {number}");
 
-
-
 int thirdNumber;
 ParameterTest_v3(out thirdNumber);
 Console.WriteLine($"thirdnumber = {thirdNumber}");
