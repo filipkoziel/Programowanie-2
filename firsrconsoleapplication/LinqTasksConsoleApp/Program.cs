@@ -1,5 +1,6 @@
 ﻿
 using LinqTasksConsoleApp;
+using System;
 
 var tasks = new List<TaskItem>
 {
@@ -45,18 +46,61 @@ Console.WriteLine($"Liczba zakończonych zadań: {zakończone}");
 
 // Zadanie 5: Wybierz tylko nazwy zadań i wyświetl
 
+List<string> zadania = tasks.Select(n => n.Name).ToList();
+Console.WriteLine("Zadanie 5");
+Console.WriteLine($"Zadania posortowane po nazwie:");
+foreach (var task in zadania)
+{
+    Console.WriteLine(task);
+}
 
 // Zadanie 6: Znalezienie nazw zakończonych zadań posortowanych według długości nazwy
 
+List<TaskItem> sortedCompletedTasks = tasks.Where(n => n.IsCompleted == true).OrderBy(n => n.Name.Length).ToList();
+Console.WriteLine("Zadanie 6");
+Console.WriteLine($"Zadania posortowane po nazwie:");
+foreach (var task in sortedCompletedTasks)
+{
+    Console.WriteLine(task);
+}
 
 //Zadanie 7: Zadania pogrupowane według stanu zakończenia, a następnie posortowane w grupach według nazwy
 
+var groupByCompleted = tasks.GroupBy(n => n.IsCompleted);
+Console.WriteLine("Zadanie 7");
+Console.WriteLine($"Zadania pogrupowane po stanie zakończenia, i grupy posortowane po nazwie:");
+foreach (var task in groupByCompleted)
+{
+    var sortGroupsByName = task.OrderBy(n => n.Name).ToList();
+    foreach (var p in sortGroupsByName)
+    {
+        Console.WriteLine(p);
+    }
+}
 
 //Zadanie 8: Najkrótsza nazwa zadania niezakończonego
 
+string shortestNameOfUncompletedTask = tasks.Where(n => !n.IsCompleted).OrderBy(n => n.Name.Length).Select(n => n.Name).FirstOrDefault();
+Console.WriteLine("Zadanie 8");
+Console.WriteLine($"Najkrótsza nazwa zadania niezakończonego:");
+Console.WriteLine(shortestNameOfUncompletedTask);
 
 //Zadanie 9: Ilość liter w nazwach wszystkich zakończonych zadań
 
+int numberOfLettersInCompletedTasks = tasks.Where(n => n.IsCompleted).Select(n => n.Name.Length).Sum();
+Console.WriteLine("Zadanie 9");
+Console.WriteLine($"Suma ilości liter w wszystkich zakończonych zadania:");
+Console.WriteLine(numberOfLettersInCompletedTasks);
 
 //Zadanie 10: Lista zadań z indeksami (zakończone zadania z numeracją)
 
+Console.WriteLine("Zadanie 10");
+/*var x = tasks.Where(n => n.IsCompleted);
+for (int i = 0; i < x.Count(); i++)
+{
+    Console.WriteLine($"{i + 1}:");
+    Console.WriteLine(x.ElementAt(i));
+}*/
+
+var x = tasks.Where(n => n.IsCompleted).Select((t, Index) => t);
+foreach (in sortedTasks)
