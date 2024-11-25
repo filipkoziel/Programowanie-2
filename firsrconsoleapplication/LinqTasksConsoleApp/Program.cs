@@ -95,12 +95,39 @@ Console.WriteLine(numberOfLettersInCompletedTasks);
 //Zadanie 10: Lista zadań z indeksami (zakończone zadania z numeracją)
 
 Console.WriteLine("Zadanie 10");
-/*var x = tasks.Where(n => n.IsCompleted);
-for (int i = 0; i < x.Count(); i++)
-{
-    Console.WriteLine($"{i + 1}:");
-    Console.WriteLine(x.ElementAt(i));
-}*/
+//var x = tasks.Where(n => n.IsCompleted);
+//for (int i = 0; i < x.Count(); i++)
+//{
+//    Console.WriteLine($"{i + 1}:");
+//    Console.WriteLine(x.ElementAt(i));
+//}
 
-var x = tasks.Where(n => n.IsCompleted).Select((t, Index) => t);
-foreach (in sortedTasks)
+//List<Result> completedTasksWithIndex = tasks.Where(n => n.IsCompleted).Select((t, Index) => new Result() { Index = Index+1, Task = t}).ToList();
+//foreach (Result r in completedTasksWithIndex)
+//{
+//    Console.WriteLine(r.Index);
+//    Console.WriteLine(r.Task);
+//}
+
+//class Result
+//{
+//    public int Index { get; set; }
+//    public TaskItem Task { get; set; }
+//}
+
+var completedTasksWithIndex = tasks.Where(n => n.IsCompleted)
+    .Select((t, Index) => new { Index = Index + 1, Task = t, Kolejny = 5})
+    .ToList();
+
+foreach (var r in completedTasksWithIndex)
+{
+    Console.WriteLine(r.Index);
+    Console.WriteLine(r.Task);
+}
+
+//Zadanie 11: Zadania z najdłuższą nazwą w każdej grupie zakończonych i niezakończonych
+//Zadanie 12: Zlicz, ile zadań w każdej grupie zawiera słowo „the” w nazwie
+//Zadanie 13: Utwórz listę zakończonych zadań z ich numeracją oraz długością nazw
+//Zadanie 14: Zadania posortowane według stanu zakończenia, a następnie alfabetycznie według nazw
+//Zadanie 15: Sprawdź, czy w nazwach wszystkich zadań są co najmniej 2 różne samogłoski
+//Zadanie 16: Znajdź wszystkie unikalne litery używane w nazwach zadań zakończonych
