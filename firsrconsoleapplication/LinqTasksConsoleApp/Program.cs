@@ -130,4 +130,4 @@ foreach (var r in completedTasksWithIndex)
 //Zadanie 13: Utwórz listę zakończonych zadań z ich numeracją oraz długością nazw
 //Zadanie 14: Zadania posortowane według stanu zakończenia, a następnie alfabetycznie według nazw
 //Zadanie 15: Sprawdź, czy w nazwach wszystkich zadań są co najmniej 2 różne samogłoski
-//Zadanie 16: Znajdź wszystkie unikalne litery używane w nazwach zadań zakończonych
+//Zadanie 16: Znajdź wszystkie unikalne litery używane w nazwach zadań zakończonychgg
