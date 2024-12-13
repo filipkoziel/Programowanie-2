@@ -181,7 +181,7 @@ Console.WriteLine("Sprawdź, czy w nazwach wszystkich zadań są co najmniej 2 r
 var x = tasks.All(n => n.Name.ToLower().Where(n => "aeiou".Contains(n)).Distinct().Count() >= 2);
 Console.WriteLine(x);
 
-//Zadanie 16: Znajdź wszystkie unikalne litery używane w nazwach zadań zakończonychgg
+//Zadanie 16: Znajdź wszystkie unikalne litery używane w nazwach zadań zakończonych
 Console.WriteLine("Zadanie 16");
 Console.WriteLine("Znajdź wszystkie unikalne litery używane w nazwach zadań zakończonych:");
 
