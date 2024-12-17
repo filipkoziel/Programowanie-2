@@ -1,53 +1,69 @@
-﻿using System.Runtime;
+﻿using System.ComponentModel;
+using System.Runtime;
 using System.Text.RegularExpressions;
 using Egzamin;
 int getNumberOfDiceFromUser()
 {
-    int i = 0;
+
+    int diceNumber = 0;
     do
     {
         Console.WriteLine("Choose number of dice to throw from 3-10");
-        i = Convert.ToInt32(Console.ReadLine());
-    } while (!(i < 11 && i > 2));
-    return i;
+        string i = Console.ReadLine();
+        if (!int.TryParse(i, out diceNumber))
+            diceNumber = 0;
+    } while (!(diceNumber < 11 && diceNumber > 2));
+    return diceNumber;
 }
-List<int> rollTheDice(int rolls)
+List<Dice> rollTheDice(int rolls, ref List<Dice> dices)
 {
-    List<int> roll = new List<int>();
     Random rnd = new Random();
     for (int i = 0; i < rolls; i++)
     {
-        roll.Add(rnd.Next(1,7));
+        var dice = new Dice(0, 0);
+        dice.DiceNumber = i + 1;
+        dice.DiceValue = rnd.Next(1,7);
+        dices.Add(dice);
     }
-    return roll;
+    return dices;
 }
-void writeRolls(List<int> roll)
+
+int calculatePoints(List<Dice> dices)
 {
-    for (int i = 0; i < roll.Count; i++)
+    int points = 0;
+
+    var reapeatingDice = dices.GroupBy(n => n.DiceValue).Where(g => g.Count() > 1);
+    foreach(var group in reapeatingDice)
     {
-        Console.WriteLine($"Kostka {i+1}: {roll[i]}");
+        points = points + group.Sum(g => g.DiceValue);
     }
-}
-int calculatePoints(List<int> roll)
-{
-    roll = roll.GroupBy(i => roll.);
 
-
-    return 0;
+    return points;
 }
 
+string repeatAgain = "";
 
 int numberOfDice = getNumberOfDiceFromUser();
 
-List<Dice> dice = new List<Dice>();
-
-List<int> rolls = rollTheDice(numberOfDice);
-
-for (int i = 0; i < rolls.Count; i++)
+do
 {
-    dice.Add(i + 1, rolls[i]);
-}
+    List<Dice> dice = new List<Dice>();
 
-writeRolls(rolls);
+    rollTheDice(numberOfDice, ref dice);
 
-calculatePoints(rolls);
+    foreach (Dice element in dice)
+    {
+        element.writeRolls(dice);
+    }
+
+    Console.WriteLine(calculatePoints(dice));
+
+    do
+    {
+        Console.WriteLine("Repeat game?");
+        repeatAgain = Console.ReadLine();
+    } while (repeatAgain != "t" && repeatAgain != "n");
+
+} while (repeatAgain == "t");
+
+return 0;

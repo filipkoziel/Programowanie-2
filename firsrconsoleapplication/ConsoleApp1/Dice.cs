@@ -16,5 +16,9 @@ namespace Egzamin
             DiceNumber = diceNumber;
             DiceValue = diceValue;
         }
+        public void writeRolls(List<Dice> dice)
+        {
+                Console.WriteLine($"Kostka {DiceNumber}: {DiceValue}");
+        }
     }
 }
