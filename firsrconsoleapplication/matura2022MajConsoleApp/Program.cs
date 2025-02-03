@@ -24,17 +24,16 @@ Console.WriteLine();
 
 // zadanie 4.2
 int counter4_2 = 0;
+int maxCountPrimeFactors = 0;
+string maxNumberPrimeFactors = "";
+int maxDiffCountPrimeFactors = 0;
+string maxDiffNumberPrimeFactors = "";
 
 
 foreach (string strNumber in strNumbers)
 {
-    Console.WriteLine(strNumber);
     int number = int.Parse(strNumber);
     int div = 2;
-    int maxCountPrimeFactors = 0;
-    string maxNumberPrimeFactors = "";
-    int maxDiffCountPrimeFactors = 0;
-    string maxDiffNumberPrimeFactors = "";
 
     List<int> primeFactors = new List<int>();
     while (number != 1)
@@ -42,7 +41,6 @@ foreach (string strNumber in strNumbers)
         
         if(number % div == 0)
         {
-            Console.Write($"{div}, ");
             primeFactors.Add(div);
             number = number / div;
         }
@@ -64,9 +62,41 @@ foreach (string strNumber in strNumbers)
         maxDiffCountPrimeFactors = primeFactors.Count();
         maxDiffNumberPrimeFactors = strNumber;
     }
-
-    Console.WriteLine();
-
-    Console.WriteLine();
 }
 
+Console.WriteLine($"{maxNumberPrimeFactors} {maxCountPrimeFactors} {maxDiffNumberPrimeFactors} {maxDiffCountPrimeFactors}");
+
+Console.WriteLine();
+
+// zadanie 4.3
+
+List<int> numbers = strNumbers.Select(strNumber => int.Parse(strNumber)).OrderBy(n => n).ToList();
+
+for (int i = 0; i < numbers.Count; i++)
+{
+    for (int j = i+1; j < numbers.Count; j++)
+    {
+        if (numbers[j] % numbers[i] == 0 )
+        {
+            for (int k = j+1; k < numbers.Count; k++)
+            {
+                if (numbers[k] % numbers[j] == 0)
+                {
+                    for (int l = k+1; l < numbers.Count; l++)
+                    {
+                        if (numbers[l] % numbers[k] == 0)
+                        {
+                            for (int m = l+1; m < numbers.Count; m++)
+                            {
+                                if (numbers[m] % numbers[l] == 0)
+                                {
+                                    Console.WriteLine($"{numbers[i]} {numbers[j]} {numbers[k]} {numbers[l]} {numbers[m]}");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
