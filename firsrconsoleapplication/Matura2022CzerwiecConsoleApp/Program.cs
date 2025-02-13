@@ -24,30 +24,55 @@ foreach(var strNumber in reverseDividedBy17)
     Console.WriteLine(strNumber);
 }
 
-// 4.2
+// 4.2 po zobaczeniu co pan zrobił
 
-List<int> absoluteDiffrenceFromReverse = new List<int>();
+int maxNumber = 0;
+int maxDiff = 0;
 
 for (int i = 0; i < strNumbers.Count; i++)
 {
     int number = int.Parse(strNumbers[i]);
     int mirroredNumber = int.Parse(string.Join("", strNumbers[i].Reverse()));
-    absoluteDiffrenceFromReverse.Add(Math.Abs(number - mirroredNumber));
-}
+    int dif = (Math.Abs(number - mirroredNumber));
 
-int maxAbsoluteDiffrence = absoluteDiffrenceFromReverse.Max();
-
-Console.WriteLine("Zadanie 4.2");
-
-for (int i = 0; i < strNumbers.Count; i++)
-{
-    if (absoluteDiffrenceFromReverse[i] == maxAbsoluteDiffrence)
+    if (dif > maxDiff)
     {
-        Console.WriteLine($"{strNumbers[i]} - {absoluteDiffrenceFromReverse[i]}");
+        maxDiff = dif;
+        maxNumber = number;
     }
 }
 
-// nie wiem co dalej
+Console.WriteLine("Zadanie 4.2");
+
+Console.WriteLine($"{maxNumber} {maxDiff}");
+
+
+/*
+// a pan zrobił
+
+int maxNumber = int.MinValue;
+int maxDiffrence = int.MinValue;
+
+foreach(var strNumber in strNumbers)
+{
+    int number = int.Parse(strNumber);
+    int mirroredNumber = int.Parse(string.Join("", strNumber.Reverse()));
+    int dif = Math.Abs(number - mirroredNumber);
+    if (dif > maxDiffrence)
+    {
+        maxDiffrence = dif;
+        maxNumber = number;
+    }
+}
+
+// a trzecia wersja
+
+string strMaxNumber = strNumbers.OrderBy(s => Math.Abs(int.Parse(s) - int.Parse(string.Join("", s.Reverse())))).Last();
+int maxDiff = Math.Abs(int.Parse(strMaxNumber) - int.Parse(string.Join("", strMaxNumber.Reverse())));
+
+Console.WriteLine($"{strMaxNumber} {maxDiff}"); 
+
+*/
 
 // 4.3
 
@@ -62,14 +87,50 @@ foreach (string strNumber in strNumbers)
     {
         if (number % i == 0)
         {
-            isPrime.Add(true);
+            isPrime.Add(false);
             break;
         }
         else if (i+1 == number)
         {
-            isPrime.Add(false);
+            isPrime.Add(true);
         }
     }
 }
 
-// 
+Console.WriteLine(isPrime.Count);
+for(int i = 0;i<strNumbers.Count;i++)
+{
+    Console.WriteLine($"{strNumbers[i]} - {isPrime[i]}");
+}
+
+
+
+// źle zrobione, pan zrobił tak:
+
+var numbers = strNumbers.Select(s => int.Parse(s));
+
+
+// 4.4
+
+Console.WriteLine("Zadanie 4.4");
+
+int countRepeats = 0;
+int countrepeat2s = 0;
+int countrepeat3s = 0;
+
+for(int i = 0; i < strNumbers.Count(); i++)
+{
+    for(int j = 0; j < strNumbers.Count(); j++)
+    {
+        if (int.Parse(strNumbers[i]) == int.Parse(strNumbers[j]))
+            countRepeats++;
+    }
+    if (countRepeats == 2)
+        countrepeat2s++;
+    else if (countRepeats == 3)
+        countrepeat3s++;
+
+    countRepeats = 0;
+}
+
+Console.WriteLine($"{strNumbers.Distinct().Count()} {countrepeat2s} {countrepeat3s}");
