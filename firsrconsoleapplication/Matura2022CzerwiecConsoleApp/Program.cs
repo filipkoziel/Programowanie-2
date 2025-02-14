@@ -78,36 +78,27 @@ Console.WriteLine($"{strMaxNumber} {maxDiff}");
 
 Console.WriteLine("Zadanie 4.3");
 
-List<bool> isPrime = new List<bool>();
+List<int> numbers = strNumbers.Select(s => int.Parse(s)).ToList();
+List<int> reverseNumbers = strNumbers.Select(s => int.Parse(string.Join("", s.Reverse()))).ToList();
 
-foreach (string strNumber in strNumbers)
+for (int i = 0; i < numbers.Count();i++)
 {
-    int number = int.Parse(strNumber);
-    for(int i = 2;i < number;i++)
+    for(int j = 2;j < numbers[i];j++)
     {
-        if (number % i == 0)
+        if (numbers[i] % j == 0 || reverseNumbers[i] % j == 0)
         {
-            isPrime.Add(false);
             break;
         }
-        else if (i+1 == number)
+        else if (j+1 == numbers[i] && j + 1 == reverseNumbers[i])
         {
-            isPrime.Add(true);
+            Console.WriteLine(numbers[i]);
         }
     }
 }
 
-Console.WriteLine(isPrime.Count);
-for(int i = 0;i<strNumbers.Count;i++)
-{
-    Console.WriteLine($"{strNumbers[i]} - {isPrime[i]}");
-}
-
-
 
 // źle zrobione, pan zrobił tak:
 
-var numbers = strNumbers.Select(s => int.Parse(s));
 
 
 // 4.4
