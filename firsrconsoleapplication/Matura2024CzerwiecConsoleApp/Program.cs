@@ -1,10 +1,16 @@
 ﻿void oddShortCut(int number)
 {
+    List<int> odds = new List<int>();
     int oddShort = 0;
-    for (int i = 10; i<20; i++)
+    for (int i = 10; i<100; i++)
     {
-        number = number / 10;
-        Console.WriteLine(number);
+        odds.Add(number % 10);
+        number = (number / 10);
+        odds = odds.Where(x => x % 2 != 0).ToList();
+    }
+    foreach (int i in odds)
+    {
+        Console.Write(i);
     }
 }
 
