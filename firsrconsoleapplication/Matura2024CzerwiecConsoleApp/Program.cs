@@ -1,4 +1,6 @@
-﻿string oddShortCut(int number)
+﻿using System.Collections.Generic;
+
+int oddShortCut(int number)
 {
     List<int> odds = new List<int>();
     int oddShort = 0;
@@ -8,38 +10,51 @@
         number = (number / 10);
         odds = odds.Where(x => x % 2 != 0).ToList();
     }
-    string result = String.Join("", odds);
+    int result = 0;
+    foreach (int entry in odds)
+    {
+        result = 10 * result + entry;
+    }
 
     return result;
 }
 
-int testNumber = int.Parse(Console.ReadLine());
+//int testNumber = int.Parse(Console.ReadLine());
 
 // 3.1 oddShortCut
 
-Console.WriteLine($"{testNumber} - {oddShortCut(testNumber)}");
+//Console.WriteLine($"{testNumber} - {oddShortCut(testNumber)}");
+
+
 
 // 3.2 
 
 StreamReader steamreader = new StreamReader("skrot.txt");
 
 string strNumberFromFile;
-List<int> numbers = new List<int>();
+List<string> strNumbers = new List<string>();
 
 while ((strNumberFromFile = steamreader.ReadLine()) != null)
 {
-    numbers.Add(int.Parse(strNumberFromFile));
+    strNumbers.Add(strNumberFromFile);
 }
 steamreader.Close();
 
-foreach (int number in numbers)
+int maxnumber = 0;
+int countImpossible = 0;
+foreach (string strNumber in strNumbers)
 {
-    int maxnumber = 0;
-    int countImpossible = 0;
-    int oddShortNumber = int.Parse(oddShortCut(number));
-
-    if (oddShortNumber == 0)
+    int number = int.Parse(strNumber);
+    if (oddShortCut(number) == 0)
+    { 
         countImpossible++;
-    if (oddShortNumber )
+        if (number > maxnumber)
+            maxnumber = number;
+    }
 
 }
+
+Console.WriteLine($"{countImpossible} - {maxnumber}");
+
+// 3.2
+
