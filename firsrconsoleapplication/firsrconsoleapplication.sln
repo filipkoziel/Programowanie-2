@@ -81,7 +81,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "matura2022MajConsoleApp", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Matura2022CzerwiecConsoleApp", "Matura2022CzerwiecConsoleApp\Matura2022CzerwiecConsoleApp.csproj", "{5FA7E03C-705E-4E8A-A53E-A11DC3629D6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matura2024CzerwiecConsoleApp", "Matura2024CzerwiecConsoleApp\Matura2024CzerwiecConsoleApp.csproj", "{305E0D12-AD65-4887-9243-BF5866FA3486}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Matura2024MajConsoleApp", "Matura2024CzerwiecConsoleApp\Matura2024MajConsoleApp.csproj", "{305E0D12-AD65-4887-9243-BF5866FA3486}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

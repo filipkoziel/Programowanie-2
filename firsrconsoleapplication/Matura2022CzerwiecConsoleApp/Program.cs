@@ -24,7 +24,7 @@ foreach(var strNumber in reverseDividedBy17)
     Console.WriteLine(strNumber);
 }
 
-// 4.2 po zobaczeniu co pan zrobił
+// 4.2 
 
 int maxNumber = 0;
 int maxDiff = 0;
@@ -46,34 +46,6 @@ Console.WriteLine("Zadanie 4.2");
 
 Console.WriteLine($"{maxNumber} {maxDiff}");
 
-
-/*
-// a pan zrobił
-
-int maxNumber = int.MinValue;
-int maxDiffrence = int.MinValue;
-
-foreach(var strNumber in strNumbers)
-{
-    int number = int.Parse(strNumber);
-    int mirroredNumber = int.Parse(string.Join("", strNumber.Reverse()));
-    int dif = Math.Abs(number - mirroredNumber);
-    if (dif > maxDiffrence)
-    {
-        maxDiffrence = dif;
-        maxNumber = number;
-    }
-}
-
-// a trzecia wersja
-
-string strMaxNumber = strNumbers.OrderBy(s => Math.Abs(int.Parse(s) - int.Parse(string.Join("", s.Reverse())))).Last();
-int maxDiff = Math.Abs(int.Parse(strMaxNumber) - int.Parse(string.Join("", strMaxNumber.Reverse())));
-
-Console.WriteLine($"{strMaxNumber} {maxDiff}"); 
-
-*/
-
 // 4.3
 
 Console.WriteLine("Zadanie 4.3");
@@ -81,7 +53,23 @@ Console.WriteLine("Zadanie 4.3");
 List<int> numbers = strNumbers.Select(s => int.Parse(s)).ToList();
 List<int> reverseNumbers = strNumbers.Select(s => int.Parse(string.Join("", s.Reverse()))).ToList();
 
-for (int i = 0; i < numbers.Count();i++)
+bool checkIfPrime(int number)
+{
+    for (int i = 2; i < number; i++)
+    {
+        if ((number % i) == 0)
+        {
+            break;
+        }
+        if ((i + 1) == number)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+/*for (int i = 0; i < numbers.Count();i++)
 {
     for(int j = 2;j < numbers[i];j++)
     {
@@ -95,11 +83,24 @@ for (int i = 0; i < numbers.Count();i++)
         }
     }
 }
+*/
+/*
+for (int i = 0; i < numbers.Count(); i++)
+{
+    for (int j = 2; j < numbers.Max(); j++)
+    {
+        if ((numbers[i] % j) == 0 || (reverseNumbers[i] % j) == 0)
+        {
+            break;
+        }
+        else if ((j + 1) == numbers[i] && (j + 1) == reverseNumbers[i])
+        {
+            Console.WriteLine(numbers[i]);
+        }
+    }
+}*/
 
-
-// źle zrobione, pan zrobił tak:
-
-
+Console.WriteLine(checkIfPrime(32));
 
 // 4.4
 
@@ -115,6 +116,7 @@ for(int i = 0; i < strNumbers.Count(); i++)
     {
         if (int.Parse(strNumbers[i]) == int.Parse(strNumbers[j]))
             countRepeats++;
+        // aktualnie, dwa razy sprawdza 
     }
     if (countRepeats == 2)
         countrepeat2s++;
