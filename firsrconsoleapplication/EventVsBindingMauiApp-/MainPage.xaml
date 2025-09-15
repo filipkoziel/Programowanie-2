@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventVsBindingMauiApp_.MainPage"
+             x:Name="thisPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Slider Minimum="0"
+                    Maximum="360"
+                    MinimumTrackColor="AliceBlue"
+                    MaximumTrackColor="Bisque"
+                    Value="45"
+                    ValueChanged="Slider_ValueChanged"
+                    x:Name="RotationSlider" />
+
+            <Label Text="To jest label"
+                   HorizontalOptions="Center"
+                   Rotation="45"
+                   x:Name="RotationLabel" />
+
+            <Label Text="{Binding Source={x:Reference RotationSlider}, Path=Value}"
+                   HorizontalOptions="Center"/>
+
+            <Label BindingContext="{x:Reference RotationSlider}"
+                   Text="{Binding Path=Value, StringFormat='Wartość to {0}'}"
+                   HorizontalOptions="Center"
+                   FontSize="{Binding Path=Value}"/>
+
+            <Label BindingContext="{x:Reference RotationSlider}"
+                   Text="{Binding Value, StringFormat='Wartość to {0}'}"
+                   HorizontalOptions="Center"
+                   FontSize="{Binding Value}"/>
+
+            <Label Text="Podaj komunikat"/>
+            <Entry Text="{Binding Message, Source={x:Reference thisPage}}"/>
+            <Button Text="wykonaj"
+                    Clicked="Button_Clicked"/>
+            <Label x:Name="returnMessageLabel" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
