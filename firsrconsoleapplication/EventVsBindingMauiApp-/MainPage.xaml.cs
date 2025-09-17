@@ -3,6 +3,13 @@
     public partial class MainPage : ContentPage
     {
         public string Message { get; set; }
+        private string returnMessage;
+        public string ReturnMessage 
+        {
+            get { return returnMessage; }
+            set { returnMessage = value; OnPropertyChanged(); }
+        }
+        
         public MainPage()
         {
             InitializeComponent();
@@ -15,7 +22,8 @@
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            returnMessageLabel.Text = "Ilość to " + Message.Length;
+            ReturnMessage = "Ilość to " + Message.Length;
+            //OnPropertyChanged(nameof(ReturnMessage));
         }
     }
 }
