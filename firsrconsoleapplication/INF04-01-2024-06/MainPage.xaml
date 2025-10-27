@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="INF04_01_2024_06.MainPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:INF04_01_2024_06.Resources.Converters"
+             x:Name="thisPage"
+             BindingContext="{x:Reference thisPage}"
+             BackgroundColor="Beige">
+
+    <ContentPage.Resources>
+        <converters:IntToImageConverter x:Key="IntToImageConverter"/>
+        <converters:StringToBoolConverter x:Key="StringToBoolConverter"/>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout Orientation="Vertical" Spacing="20">
+            <Label Text="Gra w Kości. Autor 00000000000" FontSize="Header" BackgroundColor="Brown" TextColor="White"/>
+            <Entry Text="{Binding DiceNumber, Converter={x:StaticResource StringToBoolConverter}}"/>
+            <Button Text="RZUĆ KOŚĆMI" Command="{Binding RandomizeDice}" BackgroundColor="Chocolate" HorizontalOptions="Center"/>
+            <FlexLayout BindableLayout.ItemsSource="{Binding RandomNumbers}"
+                        BackgroundColor="White"
+                        Direction="Row"
+                        JustifyContent="SpaceAround"
+                        Wrap="Wrap">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Vertical">
+                            <Image Source="{Binding Converter={x:StaticResource IntToImageConverter}}"
+                                   Margin="5,10,5,10"
+                                   Aspect="AspectFit"
+                                   HeightRequest="200"/>
+                            <Label Text="{Binding}" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+            <Label Text="{Binding DrawResult, StringFormat='Wynik tego losowania {0}'}" HorizontalOptions="Center"/>
+            <Label Text="{Binding GameResult, StringFormat='Wynik gry {0}'}" HorizontalOptions="Center"/>
+            <Button Text="RESETUJ WYNIK" Command="{Binding ResetDice}" BackgroundColor="Chocolate" HorizontalOptions="Center"/>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

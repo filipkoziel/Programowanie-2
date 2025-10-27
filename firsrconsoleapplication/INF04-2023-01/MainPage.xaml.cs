@@ -61,7 +61,7 @@ namespace INF04_2023_01
         }
 
         private Command showPasswordInfo;
-        public Command ShowPasswordInfo
+        public Command ShowPasswordInfo 
         {
             get
             {
