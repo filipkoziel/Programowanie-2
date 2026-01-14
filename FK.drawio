@@ -1,0 +1,457 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.2.9">
+  <diagram name="Strona-1" id="hlj-hmrK_0x6bmFEpzXH">
+    <mxGraphModel dx="864" dy="1645" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="gzyQsIyylUjKPT76wy0F-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=default;align=center;verticalAlign=middle;rounded=0;" value="&lt;p dir=&quot;auto&quot; style=&quot;box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-size: 16px; text-align: start;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;&amp;nbsp; Zadanie 1: Suma liczb od 1&amp;nbsp; &amp;nbsp; do N&lt;/font&gt;&lt;/p&gt;&lt;ul dir=&quot;auto&quot; style=&quot;box-sizing: border-box; padding-left: 2em; margin-top: 0px; margin-bottom: 16px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-size: 16px; text-align: start;&quot;&gt;&lt;li style=&quot;box-sizing: border-box;&quot;&gt;&lt;span&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Wczytaj liczbę N&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;&lt;span&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Oblicz sumę wszystkich liczb od 1 do N&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Wyświetl wynik&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="160" width="210" y="-1169" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-61" edge="1" parent="1" source="gzyQsIyylUjKPT76wy0F-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="gzyQsIyylUjKPT76wy0F-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-4" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Start" vertex="1">
+          <mxGeometry height="80" width="120" x="249.25" y="-1160" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-10" edge="1" parent="1" source="gzyQsIyylUjKPT76wy0F-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="gzyQsIyylUjKPT76wy0F-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-5" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Wprowadź liczbę N" vertex="1">
+          <mxGeometry height="40" width="155" x="231.75" y="-1049" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-21" edge="1" parent="1" source="gzyQsIyylUjKPT76wy0F-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="gzyQsIyylUjKPT76wy0F-20" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-63" connectable="0" parent="gzyQsIyylUjKPT76wy0F-21" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Tak" vertex="1">
+          <mxGeometry relative="1" x="-0.609" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-24" edge="1" parent="1" source="gzyQsIyylUjKPT76wy0F-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="gzyQsIyylUjKPT76wy0F-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-64" connectable="0" parent="gzyQsIyylUjKPT76wy0F-24" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Nie" vertex="1">
+          <mxGeometry relative="1" x="-0.1911" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-7" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="Czy N &amp;gt; i" vertex="1">
+          <mxGeometry height="80" width="135" x="241.75" y="-910" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-34" edge="1" parent="1" source="gzyQsIyylUjKPT76wy0F-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="gzyQsIyylUjKPT76wy0F-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="i = 0, suma = 0" vertex="1">
+          <mxGeometry height="30" width="92.5" x="263" y="-990" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-27" edge="1" parent="1" source="gzyQsIyylUjKPT76wy0F-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="gzyQsIyylUjKPT76wy0F-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-18" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Wypisz suma" vertex="1">
+          <mxGeometry height="40" width="120" x="249.25" y="-780" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-62" edge="1" parent="1" source="gzyQsIyylUjKPT76wy0F-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="481" y="-940" />
+            </Array>
+            <mxPoint x="310" y="-940" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="suma = suma + i&lt;div&gt;i = i + 1&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="119" x="421" y="-920" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-26" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Stop" vertex="1">
+          <mxGeometry height="80" width="120" x="249.25" y="-710" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-31" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=default;align=center;verticalAlign=middle;rounded=0;" value="&lt;p dir=&quot;auto&quot; style=&quot;box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-size: 16px; text-align: start;&quot;&gt;&lt;span&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Zadanie 2: Silnia&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;ul dir=&quot;auto&quot; style=&quot;box-sizing: border-box; padding-left: 2em; margin-top: 0px; margin-bottom: 16px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-size: 16px; text-align: start;&quot;&gt;&lt;li style=&quot;box-sizing: border-box;&quot;&gt;&lt;span&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Wczytaj liczbę N&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;&lt;span&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Oblicz N! (silnia)&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;&lt;span&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Wyświetl wynik&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="129" width="170" x="580" y="-1169" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-36" edge="1" parent="1" source="gzyQsIyylUjKPT76wy0F-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="gzyQsIyylUjKPT76wy0F-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-32" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Start" vertex="1">
+          <mxGeometry height="80" width="120" x="780" y="-1160" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-38" edge="1" parent="1" source="gzyQsIyylUjKPT76wy0F-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="gzyQsIyylUjKPT76wy0F-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-35" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Wprowadź liczbę N" vertex="1">
+          <mxGeometry height="40" width="155" x="762.5" y="-1049" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-46" edge="1" parent="1" source="gzyQsIyylUjKPT76wy0F-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="gzyQsIyylUjKPT76wy0F-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-37" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="i = 1&lt;div&gt;wynik = 1&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="780" y="-980" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-49" edge="1" parent="1" source="gzyQsIyylUjKPT76wy0F-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="gzyQsIyylUjKPT76wy0F-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-65" connectable="0" parent="gzyQsIyylUjKPT76wy0F-49" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Nie" vertex="1">
+          <mxGeometry relative="1" x="-0.6726" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-54" edge="1" parent="1" source="gzyQsIyylUjKPT76wy0F-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="gzyQsIyylUjKPT76wy0F-52">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-66" connectable="0" parent="gzyQsIyylUjKPT76wy0F-54" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Tak" vertex="1">
+          <mxGeometry relative="1" x="-0.1172" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-39" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="Czy i = N" vertex="1">
+          <mxGeometry height="60" width="100" x="790" y="-850" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-44" edge="1" parent="1" source="gzyQsIyylUjKPT76wy0F-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="680" y="-900" />
+            </Array>
+            <mxPoint x="840" y="-900" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-42" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="i = i + 1&lt;div&gt;wynik = wynik * i&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="120" x="620" y="-880" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-58" edge="1" parent="1" source="gzyQsIyylUjKPT76wy0F-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="gzyQsIyylUjKPT76wy0F-57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-52" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Wypisz wynik" vertex="1">
+          <mxGeometry height="40" width="120" x="780" y="-740" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-57" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Stop" vertex="1">
+          <mxGeometry height="80" width="120" x="780" y="-670" as="geometry" />
+        </mxCell>
+        <mxCell id="gzyQsIyylUjKPT76wy0F-67" parent="1" style="text;whiteSpace=wrap;html=1;fillColor=default;strokeColor=default;fontColor=default;labelBorderColor=none;" value="&lt;p dir=&quot;auto&quot; style=&quot;box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span&gt;&lt;font style=&quot;&quot;&gt;Zadanie 3: Liczby parzyste z zakresu&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;ul dir=&quot;auto&quot; style=&quot;box-sizing: border-box; padding-left: 2em; margin-top: 0px; margin-bottom: 16px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;li style=&quot;box-sizing: border-box;&quot;&gt;&lt;span&gt;&lt;font style=&quot;&quot;&gt;Wczytaj dwie liczby: początek i koniec zakresu&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;&lt;span&gt;&lt;font style=&quot;&quot;&gt;Wyświetl wszystkie liczby parzyste z tego zakresu&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="150" width="250" x="980" y="-1169" as="geometry" />
+        </mxCell>
+        <mxCell id="yxjD2jhLgh9jblkH1AOI-16" edge="1" parent="1" source="yxjD2jhLgh9jblkH1AOI-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="yxjD2jhLgh9jblkH1AOI-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yxjD2jhLgh9jblkH1AOI-2" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Start" vertex="1">
+          <mxGeometry height="80" width="120" x="1330" y="-1169" as="geometry" />
+        </mxCell>
+        <mxCell id="yxjD2jhLgh9jblkH1AOI-17" edge="1" parent="1" source="yxjD2jhLgh9jblkH1AOI-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="yxjD2jhLgh9jblkH1AOI-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yxjD2jhLgh9jblkH1AOI-3" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Wprowadź liczby min, max" vertex="1">
+          <mxGeometry height="40" width="180" x="1300" y="-1059" as="geometry" />
+        </mxCell>
+        <mxCell id="yxjD2jhLgh9jblkH1AOI-6" edge="1" parent="1" source="yxjD2jhLgh9jblkH1AOI-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="yxjD2jhLgh9jblkH1AOI-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yxjD2jhLgh9jblkH1AOI-7" connectable="0" parent="yxjD2jhLgh9jblkH1AOI-6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="tak" vertex="1">
+          <mxGeometry relative="1" x="-0.6726" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yxjD2jhLgh9jblkH1AOI-32" edge="1" parent="1" source="yxjD2jhLgh9jblkH1AOI-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1390.1126760563382" y="-760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yxjD2jhLgh9jblkH1AOI-34" connectable="0" parent="yxjD2jhLgh9jblkH1AOI-32" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="nie" vertex="1">
+          <mxGeometry relative="1" x="-0.4356" as="geometry">
+            <mxPoint y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yxjD2jhLgh9jblkH1AOI-8" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="jeżeli i &amp;lt; max" vertex="1">
+          <mxGeometry height="80" width="130" x="1325" y="-870" as="geometry" />
+        </mxCell>
+        <mxCell id="yxjD2jhLgh9jblkH1AOI-21" edge="1" parent="1" source="yxjD2jhLgh9jblkH1AOI-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" target="yxjD2jhLgh9jblkH1AOI-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yxjD2jhLgh9jblkH1AOI-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="i = i + 1" vertex="1">
+          <mxGeometry height="20" width="60" x="1210" y="-870" as="geometry" />
+        </mxCell>
+        <mxCell id="yxjD2jhLgh9jblkH1AOI-14" edge="1" parent="1" source="yxjD2jhLgh9jblkH1AOI-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="yxjD2jhLgh9jblkH1AOI-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yxjD2jhLgh9jblkH1AOI-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="liczba i = min" vertex="1">
+          <mxGeometry height="30" width="140" x="1320" y="-990" as="geometry" />
+        </mxCell>
+        <mxCell id="yxjD2jhLgh9jblkH1AOI-23" edge="1" parent="1" source="yxjD2jhLgh9jblkH1AOI-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1240" y="-930" />
+            </Array>
+            <mxPoint x="1390.0000000000002" y="-930" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yxjD2jhLgh9jblkH1AOI-24" connectable="0" parent="yxjD2jhLgh9jblkH1AOI-23" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="nie" vertex="1">
+          <mxGeometry relative="1" x="-0.8655" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yxjD2jhLgh9jblkH1AOI-27" edge="1" parent="1" source="yxjD2jhLgh9jblkH1AOI-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="yxjD2jhLgh9jblkH1AOI-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yxjD2jhLgh9jblkH1AOI-31" connectable="0" parent="yxjD2jhLgh9jblkH1AOI-27" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="tak" vertex="1">
+          <mxGeometry relative="1" x="-0.3499" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yxjD2jhLgh9jblkH1AOI-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="jeżeli reszta od i / 2 to 0" vertex="1">
+          <mxGeometry height="20" width="140" x="1170" y="-910" as="geometry" />
+        </mxCell>
+        <mxCell id="yxjD2jhLgh9jblkH1AOI-30" edge="1" parent="1" source="yxjD2jhLgh9jblkH1AOI-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1240" y="-930" />
+            </Array>
+            <mxPoint x="1390" y="-930" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yxjD2jhLgh9jblkH1AOI-25" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="wypisz i" vertex="1">
+          <mxGeometry height="20" width="60" x="1210" y="-960" as="geometry" />
+        </mxCell>
+        <mxCell id="yxjD2jhLgh9jblkH1AOI-33" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Stop" vertex="1">
+          <mxGeometry height="80" width="120" x="1330" y="-760" as="geometry" />
+        </mxCell>
+        <mxCell id="yxjD2jhLgh9jblkH1AOI-35" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=default;align=center;verticalAlign=middle;rounded=0;" value="&lt;p dir=&quot;auto&quot; style=&quot;box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-size: 16px; text-align: start;&quot;&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Zadanie 4: Odwracanie cyfr liczby&lt;/span&gt;&lt;/p&gt;&lt;ul dir=&quot;auto&quot; style=&quot;box-sizing: border-box; padding-left: 2em; margin-top: 0px; margin-bottom: 16px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-size: 16px; text-align: start;&quot;&gt;&lt;li style=&quot;box-sizing: border-box;&quot;&gt;&lt;span&gt;&lt;font&gt;Wczytaj liczbę (np. 1234)&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;&lt;span&gt;&lt;font style=&quot;&quot;&gt;Wyświetl ją odwróconą (4321)&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="160" width="200" y="-560" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-4" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="uY-drQc-O1u-AhCIWzOQ-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Start" vertex="1">
+          <mxGeometry height="80" width="120" x="249.25" y="-560" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-6" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="uY-drQc-O1u-AhCIWzOQ-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-3" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Wprowadź liczbę N" vertex="1">
+          <mxGeometry height="40" width="155" x="231.75" y="-451" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-10" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="uY-drQc-O1u-AhCIWzOQ-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;result = 0&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="120.75" x="248.87" y="-380" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-11" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="uY-drQc-O1u-AhCIWzOQ-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-13" connectable="0" parent="uY-drQc-O1u-AhCIWzOQ-11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Tak" vertex="1">
+          <mxGeometry relative="1" x="-0.5346" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-16" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="uY-drQc-O1u-AhCIWzOQ-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-19" connectable="0" parent="uY-drQc-O1u-AhCIWzOQ-16" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="nie" vertex="1">
+          <mxGeometry relative="1" x="-0.2968" y="1" as="geometry">
+            <mxPoint x="-1" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-8" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="czy N &amp;gt; 0" vertex="1">
+          <mxGeometry height="80" width="110" x="254.25" y="-270" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-12" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="140" y="-330" />
+            </Array>
+            <mxPoint x="310" y="-330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="result = result *10 + N % 10&lt;div&gt;N = N / 10&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="160" x="60" y="-310" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-18" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="uY-drQc-O1u-AhCIWzOQ-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-15" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Wypisz result" vertex="1">
+          <mxGeometry height="40" width="155" x="231.74" y="-160" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-17" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Stop" vertex="1">
+          <mxGeometry height="80" width="120" x="248.87" y="-90" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=default;align=center;verticalAlign=middle;rounded=0;" value="&lt;p dir=&quot;auto&quot; style=&quot;box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-size: 16px; text-align: start;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0); background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Zadanie 5: Suma cyfr liczby&lt;/font&gt;&lt;/p&gt;&lt;ul dir=&quot;auto&quot; style=&quot;box-sizing: border-box; padding-left: 2em; margin-top: 0px; margin-bottom: 16px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-size: 16px; text-align: start;&quot;&gt;&lt;li style=&quot;box-sizing: border-box;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0); background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Wczytaj liczbę&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0); background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Oblicz sumę jej cyfr&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0); background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Powtarzaj aż wynik będzie jednocyfrowy&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="149" width="200" x="460" y="-560" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-50" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="uY-drQc-O1u-AhCIWzOQ-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-22" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Start" vertex="1">
+          <mxGeometry height="80" width="120" x="780" y="-560" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-51" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="uY-drQc-O1u-AhCIWzOQ-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-24" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Wprowadź liczbę N" vertex="1">
+          <mxGeometry height="40" width="155" x="762.5" y="-451" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-25" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="uY-drQc-O1u-AhCIWzOQ-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;suma = 0&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="120.75" x="779.62" y="-370" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-27" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="uY-drQc-O1u-AhCIWzOQ-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-28" connectable="0" parent="uY-drQc-O1u-AhCIWzOQ-27" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Tak" vertex="1">
+          <mxGeometry relative="1" x="-0.5346" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-43" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="uY-drQc-O1u-AhCIWzOQ-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-31" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="czy N &amp;gt; 0" vertex="1">
+          <mxGeometry height="80" width="110" x="785" y="-250" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-57" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="-310" />
+            </Array>
+            <mxPoint x="840" y="-310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="suma = suma + N % 10&lt;div&gt;N = N / 10&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="160" x="610" y="-290" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-48" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="uY-drQc-O1u-AhCIWzOQ-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-49" connectable="0" parent="uY-drQc-O1u-AhCIWzOQ-48" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Nie" vertex="1">
+          <mxGeometry relative="1" x="-0.2511" as="geometry">
+            <mxPoint y="3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-53" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="uY-drQc-O1u-AhCIWzOQ-52">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-54" connectable="0" parent="uY-drQc-O1u-AhCIWzOQ-53" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Tak" vertex="1">
+          <mxGeometry relative="1" x="-0.8545" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-38" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="Czy suma &amp;lt; 10" vertex="1">
+          <mxGeometry height="80" width="110" x="784.99" y="-141" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-47" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Stop" vertex="1">
+          <mxGeometry height="80" width="120" x="780.37" y="-10" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-55" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="500.75" y="-390" />
+            </Array>
+            <mxPoint x="840.75" y="-390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-52" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="N = suma" vertex="1">
+          <mxGeometry height="60" width="120" x="460" y="-290" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-56" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=default;align=center;verticalAlign=middle;rounded=0;" value="&lt;p dir=&quot;auto&quot; style=&quot;box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-size: 16px; text-align: start;&quot;&gt;&lt;font style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: rgb(0, 0, 0);&quot;&gt;Zadanie 6: Kalkulator opłat parkingowych&lt;/font&gt;&lt;/p&gt;&lt;ul dir=&quot;auto&quot; style=&quot;box-sizing: border-box; padding-left: 2em; margin-top: 0px; margin-bottom: 16px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-size: 16px; text-align: start;&quot;&gt;&lt;li style=&quot;box-sizing: border-box;&quot;&gt;&lt;font style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: rgb(0, 0, 0);&quot;&gt;Wczytaj czas parkowania (w minutach)&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;&lt;font style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: rgb(0, 0, 0);&quot;&gt;Pierwsza godzina: 4 zł&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;&lt;font style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: rgb(0, 0, 0);&quot;&gt;Każda następna rozpoczęta godzina: 2 zł&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;&lt;font style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: rgb(0, 0, 0);&quot;&gt;Oblicz koszt&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="210" width="220" x="1000" y="-560" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-61" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="uY-drQc-O1u-AhCIWzOQ-60">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-59" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Start" vertex="1">
+          <mxGeometry height="80" width="120" x="1330" y="-560" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-63" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="uY-drQc-O1u-AhCIWzOQ-62">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-60" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Wprowadź liczbę m" vertex="1">
+          <mxGeometry height="40" width="200" x="1290" y="-451" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-66" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="uY-drQc-O1u-AhCIWzOQ-65">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-62" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;i = 0&lt;/div&gt;h = ceil(m / 60)&lt;div&gt;koszt = 0&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="180" x="1300" y="-380" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-71" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-79" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="uY-drQc-O1u-AhCIWzOQ-70">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-88" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="uY-drQc-O1u-AhCIWzOQ-87">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-89" connectable="0" parent="uY-drQc-O1u-AhCIWzOQ-88" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Tak" vertex="1">
+          <mxGeometry relative="1" x="0.1261" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-65" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="czy i &amp;gt; h" vertex="1">
+          <mxGeometry height="80" width="110" x="1335" y="-170" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-75" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="uY-drQc-O1u-AhCIWzOQ-73">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-78" connectable="0" parent="uY-drQc-O1u-AhCIWzOQ-75" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Nie" vertex="1">
+          <mxGeometry relative="1" x="-0.8016" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-76" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" target="uY-drQc-O1u-AhCIWzOQ-72">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-77" connectable="0" parent="uY-drQc-O1u-AhCIWzOQ-76" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Tak" vertex="1">
+          <mxGeometry relative="1" x="-0.5657" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-70" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="czy i = 0" vertex="1">
+          <mxGeometry height="80" width="110" x="1100" y="-170" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-80" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1190" y="-290" />
+            </Array>
+            <mxPoint x="1390" y="-290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-72" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="koszt = koszt + 2" vertex="1">
+          <mxGeometry height="30" width="120" x="1130" y="-250" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-81" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="-290" />
+            </Array>
+            <mxPoint x="1390" y="-290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-73" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="koszt = koszt + 4" vertex="1">
+          <mxGeometry height="30" width="120" x="1000" y="-250" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-83" edge="1" parent="1" source="uY-drQc-O1u-AhCIWzOQ-65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="uY-drQc-O1u-AhCIWzOQ-79" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1335" y="-130" as="sourcePoint" />
+            <mxPoint x="1210" y="-130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-85" connectable="0" parent="uY-drQc-O1u-AhCIWzOQ-83" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Nie" vertex="1">
+          <mxGeometry relative="1" x="-0.0984" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-79" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="i = i + 1" vertex="1">
+          <mxGeometry height="30" width="60" x="1230" y="-145" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-87" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Stop" vertex="1">
+          <mxGeometry height="80" width="120" x="1330" y="-61" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-90" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=default;align=center;verticalAlign=middle;rounded=0;" value="&lt;p dir=&quot;auto&quot; style=&quot;box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-size: 16px; text-align: start;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0); background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Zadanie 7: Bankomat&lt;/font&gt;&lt;/p&gt;&lt;ul dir=&quot;auto&quot; style=&quot;box-sizing: border-box; padding-left: 2em; margin-top: 0px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-size: 16px; text-align: start; margin-bottom: 0px !important; color: rgb(255, 255, 255);&quot;&gt;&lt;li style=&quot;box-sizing: border-box;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0); background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Wczytaj kwotę do wypłaty&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0); background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Oblicz ile banknotów każdego nominału wydać (200, 100, 50, 20, 10)&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0); background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Minimalizuj liczbę banknotów&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="220" width="210" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-91" parent="1" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;position2=0;size=30;position=0.09;" value="ceil jest funkcją zwracającą podaną liczbę zaokrągloną do góry" vertex="1">
+          <mxGeometry height="81" width="150" x="1490" y="-411" as="geometry" />
+        </mxCell>
+        <mxCell id="uY-drQc-O1u-AhCIWzOQ-93" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Start" vertex="1">
+          <mxGeometry height="80" width="120" x="290" y="110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
