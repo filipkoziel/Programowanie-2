@@ -14,7 +14,7 @@
 
     <ScrollView>
         <StackLayout Orientation="Vertical" Spacing="20">
-            <Label Text="Gra w Kości. Autor 00000000000" FontSize="Header" BackgroundColor="Brown" TextColor="White"/>
+            <Label Text="Gra w Kości. Autor: Ja" FontSize="Header" BackgroundColor="Brown" TextColor="White"/>
             <Entry Text="{Binding DiceNumber, Converter={x:StaticResource StringToBoolConverter}}"/>
             <Button Text="RZUĆ KOŚĆMI" Command="{Binding RandomizeDice}" BackgroundColor="Chocolate" HorizontalOptions="Center"/>
             <FlexLayout BindableLayout.ItemsSource="{Binding RandomNumbers}"

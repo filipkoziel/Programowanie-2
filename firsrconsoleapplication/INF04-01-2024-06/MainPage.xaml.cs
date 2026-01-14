@@ -34,7 +34,7 @@ namespace INF04_01_2024_06
 
         private Command randomizeDice;
         public Command RandomizeDice
-        {
+        { 
             get
             {
                 if (randomizeDice == null)
