@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBaseMauiApp.MainPage"
+             xmlns:local="clr-namespace:DataBaseMauiApp">
+
+    <ContentPage.BindingContext>
+        <local:MainViewModel />
+    </ContentPage.BindingContext>
+    
+    
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+            <Button Text="Get all people" Command="{Binding GetAllPeople}"/>
+            <CollectionView ItemsSource="{Binding People}" SelectionMode="Single" SelectedItem="{Binding SelectedPerson}" SelectionChangedCommand="{Binding SelectionChange}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <ContentView>
+                            <HorizontalStackLayout Margin="5">
+                                <Border Stroke="white" StrokeThickness="1" Padding="5" Margin="-1" HorizontalOptions="Center">
+                                    <Label Text="{Binding Name}" />
+                                </Border>
+                                <Border Stroke="white" StrokeThickness="1" Padding="5" Margin="-1" HorizontalOptions="Center">
+                                    <Label Text="{Binding Surname}" />
+                                </Border>
+                                <Border Stroke="white" StrokeThickness="1" Padding="5" Margin="-1" HorizontalOptions="Center">
+                                    <Label Text="{Binding Age}" />
+                                </Border>
+                            </HorizontalStackLayout>
+                        </ContentView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label Text="{Binding SelectedPerson.Name}"/>
+
+            <Label Text="Imie"/>
+            <Entry Text="{Binding SelectedPersonCopy.Name}"/>
+            <Label Text="Nazwisko"/>
+            <Entry Text="{Binding SelectedPersonCopy.Surname}"/>
+            <Label Text="Wiek"/>
+            <Entry Text="{Binding SelectedPersonCopy.Age}"/>
+            <Button Command="{Binding SetNewParameters}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

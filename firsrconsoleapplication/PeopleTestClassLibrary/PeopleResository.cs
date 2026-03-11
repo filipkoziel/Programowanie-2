@@ -22,11 +22,11 @@ namespace PeopleTestClassLibrary
 *
 * 
 * 
-* 7 Dodaj wszystkim osobom 1 rok (symulacja urodzin).
-* 8 Usuñ wszystkich, którzy maj¹ wiêcej ni¿ 80 lat.
-* 9 ZnajdŸ najstarsz¹ osobê i zmieñ jej nazwisko na „Najstarszy”.
-* 10 Usuñ osoby m³odsze ni¿ œrednia wieku.
-* 11 Zmieñ imiona na wersjê „WIELKIMI LITERAMI”.
+* 
+* 
+* 
+* 
+* 
 
 
 */
@@ -86,14 +86,20 @@ namespace PeopleTestClassLibrary
 
         public int GetPeopleCount()
         {
-            return context.People.Count();
+            return context.People
+                .AsNoTracking()
+                .Count();
         }
 
         // 5 Zwróæ wszystkie unikalne imiona.
 
-        public List<String> GetUniqueNames()
+        public List<String> GetUniqueNamesList()
         {
-            return context.People.Select(p => p.Name).Distinct().ToList();
+            return context.People
+                .AsNoTracking()
+                .Select(p => p.Name)
+                .Distinct()
+                .ToList();
         }
 
         //U - update
@@ -110,18 +116,85 @@ namespace PeopleTestClassLibrary
             }
         }
 
+        public void UpdateSurname(int id, string newSurname)
+        {
+            Person? person = context.People.FirstOrDefault(p => p.Id == id);
+
+            if (person != null)
+            {
+                person.Surname = newSurname;
+
+                context.SaveChanges();
+            }
+        }
+
+        public void UpdateAge(int id, int newAge)
+        {
+            Person? person = context.People.FirstOrDefault(p => p.Id == id);
+
+            if (person != null)
+            {
+                person.Age = newAge;
+
+                context.SaveChanges();
+            }
+        }
+
         // 6 Zmieñ nazwisko wszystkich osób o nazwisku „Kowalski” na „Kowal”.
 
         public void ChangeKowalskiSurnameToKowal()
         {
-            Person? person = context.People.FirstOrDefault(p => p.Surname == "Kowalski");
+            List<Person> people = context.People.Where(p => p.Surname == "Kowalski").ToList();
 
-            if (person != null)
+            foreach(Person person in people)
             {
                 person.Name = "Kowal";
 
                 context.SaveChanges();
             }
+        }
+
+        //7 Dodaj wszystkim osobom 1 rok(symulacja urodzin).
+
+        public void UpdateAge()
+        {
+            List<Person> people = context.People.ToList();
+
+            foreach (Person person in people)
+            {
+                person.Age++;
+            }
+
+            context.SaveChanges();
+        }
+
+        //9 ZnajdŸ najstarsz¹ osobê i zmieñ jej nazwisko na „Najstarszy”.
+
+        public void RenameOldest()
+        {
+            int max = context.People.Max(p => p.Age);
+            Person? person = context.People.AsNoTracking().FirstOrDefault(p => p.Age == max);
+
+            if (person != null)
+            {
+                person.Surname = "Najstarszy";
+
+                context.SaveChanges();
+            }
+        }
+
+        //11 Zmieñ imiona na wersjê „WIELKIMI LITERAMI”.
+
+        public void CapitalizeNames()
+        {
+            List<Person> people = context.People.ToList();
+
+            foreach (Person person in people)
+            {
+                person.Name = person.Name.ToUpper();
+            }
+
+            context.SaveChanges();
         }
 
         //D - delete
@@ -136,6 +209,35 @@ namespace PeopleTestClassLibrary
                 context.SaveChanges();
             }
 
+        }
+
+        //8 Usuñ wszystkich, którzy maj¹ wiêcej ni¿ 80 lat.
+
+        public void DeletePeopleOver80()
+        {
+            List<Person> persons = context.People.Where(p => p.Age > 80).ToList();
+
+            foreach (Person person in persons)
+            {
+                context.People.Remove(person);
+            }
+
+            context.SaveChanges();
+        }
+
+        //10 Usuñ osoby m³odsze ni¿ œrednia wieku.
+
+        public void DeletePeopleBelowAverageAge()
+        {
+            double averageAge = context.People.Average(p => p.Age);
+            List<Person> persons = context.People.Where(p => p.Age < averageAge).ToList();
+
+            foreach (Person person in persons)
+            {
+                context.People.Remove(person);
+            }
+
+            context.SaveChanges();
         }
     }
 }
