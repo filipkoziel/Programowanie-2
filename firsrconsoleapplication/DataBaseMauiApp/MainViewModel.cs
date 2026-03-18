@@ -1,32 +1,31 @@
-﻿using System;
+﻿using PeopleTestClassLibrary;
+using PeopleTestClassLibrary.DTO_s;
+using DataBaseMauiApp.ViewModelModels;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataBaseMauiApp.Model;
-using PeopleTestClassLibrary;
-using PeopleTestClassLibrary.Models;
 
 namespace DataBaseMauiApp
 {
 	internal class MainViewModel : BindableObject
 	{
-		public List<Person> People
-		{
-			get { return dataRepository.people; }
-			set { dataRepository.people = value; OnPropertyChanged(); }
-		}
+		public ObservableCollection<Person> People {  get; set; }
 
+        private Person selectedPerson;
 		public Person SelectedPerson
 		{
-			get { return dataRepository.selectedPerson; }
-            set { dataRepository.selectedPerson = value; OnPropertyChanged(); }
+			get { return selectedPerson; }
+            set { selectedPerson = value; OnPropertyChanged(); }
 		}
 
+        private Person selectedPersonCopy;
 		public Person SelectedPersonCopy
 		{
-            get { return dataRepository.selectedPersonCopy; }
-			set { dataRepository.selectedPersonCopy = value; OnPropertyChanged(); }
+            get { return selectedPersonCopy; }
+			set { selectedPersonCopy = value; OnPropertyChanged(); }
         }
 
 
@@ -40,14 +39,20 @@ namespace DataBaseMauiApp
 					getAllPeople = new Command(
 						() =>
 						{
-							People = peopleRepository.GetAllPeople();
-						}
+                            People.Clear();
+                            foreach (PersonDTO person in peopleRepository.GetAllPeopleDTO())
+                            {
+                                People.Add(new Person() { Id = person.Id, Name = person.Name, Surname = person.Surname, Age = person.Age});
+                            }
+                        }
 						);
                 return getAllPeople;
 
             }
 
 		}
+
+
 
 		private Command setNewParameters;
         public Command SetNewParameters
@@ -58,10 +63,15 @@ namespace DataBaseMauiApp
                     setNewParameters = new Command(
                         () =>
                         {
-							int id = SelectedPerson.Id;
-							peopleRepository.UpdateName(id, SelectedPersonCopy.Name);
-                            peopleRepository.UpdateSurname(id, SelectedPersonCopy.Surname);
-                            peopleRepository.UpdateAge(id, SelectedPersonCopy.Age);
+                            if (SelectedPersonCopy == null)
+                                return;
+
+                            int id = SelectedPerson.Id;
+                            peopleRepository.UpdatePerson(SelectedPersonCopy.Id, SelectedPersonCopy.Name, SelectedPersonCopy.Surname, SelectedPersonCopy.Age);
+
+                            SelectedPerson.Name = SelectedPersonCopy.Name;
+                            SelectedPerson.Surname = SelectedPersonCopy.Surname;
+                            SelectedPerson.Age = SelectedPersonCopy.Age;
                         }
                         );
                 return setNewParameters;
@@ -79,27 +89,26 @@ namespace DataBaseMauiApp
                     selectionChange = new Command(
                         () =>
                         {
-                            SelectedPersonCopy = new Person
-                            {
-                                Id = SelectedPerson.Id,
-                                Name = SelectedPerson.Name,
-                                Surname = SelectedPerson.Surname,
-                                Age = SelectedPerson.Age
-                            };
+                            SelectedPersonCopy = GetPersonCopy(SelectedPerson);
                         }
                         );
                 return selectionChange;
-
             }
 
         }
 
-        private DataRepository dataRepository;
         private PeopleRepository peopleRepository;
         public MainViewModel()
 		{
-			peopleRepository = new PeopleRepository();
-			dataRepository = new DataRepository();
+            People = new ObservableCollection<Person>();
+            peopleRepository = new PeopleRepository();
 		}
-	}
+
+        private Person GetPersonCopy(Person person)
+        {
+            if (person == null)
+                return null;
+            return new Person() { Id = person.Id, Name = person.Name, Surname = person.Surname, Age = person.Age };
+        }
+    }
 }

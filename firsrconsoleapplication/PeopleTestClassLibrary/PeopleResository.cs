@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PeopleTestClassLibrary.DTO_s;
 using PeopleTestClassLibrary.Models;
 using System;
 using System.Collections.Generic;
@@ -49,6 +50,16 @@ namespace PeopleTestClassLibrary
                 .AsNoTracking()
                 .OrderBy(p => p.Name)
                 .ThenBy(p => p.Surname)
+                .ToList();
+        }
+
+        public List<PersonDTO> GetAllPeopleDTO()
+        {
+            return context.People
+                .AsNoTracking()
+                .OrderBy(p => p.Name)
+                .ThenBy(p => p.Surname)
+                .Select(p => new PersonDTO() { Id = p.Id, Name = p.Name, Surname = p.Surname, Age = p.Age })
                 .ToList();
         }
 
@@ -103,6 +114,20 @@ namespace PeopleTestClassLibrary
         }
 
         //U - update
+
+        public void UpdatePerson(int id, string name, string surname, int age)
+        {
+            Person? person = context.People.FirstOrDefault(p => p.Id == id);
+
+            if (person != null)
+            {
+                person.Name = name;
+                person.Surname = surname;
+                person.Age = age;
+
+                context.SaveChanges();
+            }
+        }
 
         public void UpdateName(int id, string newName)
         {

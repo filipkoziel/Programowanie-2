@@ -7,8 +7,7 @@
     <ContentPage.BindingContext>
         <local:MainViewModel />
     </ContentPage.BindingContext>
-    
-    
+
     <ScrollView>
         <VerticalStackLayout Padding="30,0" Spacing="25">
             <Button Text="Get all people" Command="{Binding GetAllPeople}"/>
@@ -32,15 +31,15 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-            <Label Text="{Binding SelectedPerson.Name}"/>
-
-            <Label Text="Imie"/>
-            <Entry Text="{Binding SelectedPersonCopy.Name}"/>
-            <Label Text="Nazwisko"/>
-            <Entry Text="{Binding SelectedPersonCopy.Surname}"/>
-            <Label Text="Wiek"/>
-            <Entry Text="{Binding SelectedPersonCopy.Age}"/>
-            <Button Command="{Binding SetNewParameters}"/>
+            <StackLayout BindingContext="{Binding SelectedPersonCopy}">
+                <Label Text="Imie"/>
+                <Entry Text="{Binding Name}"/>
+                <Label Text="Nazwisko"/>
+                <Entry Text="{Binding Surname}"/>
+                <Label Text="Wiek"/>
+                <Entry Text="{Binding Age}"/>
+                <Button Text="Update Database" Command="{Binding SetNewParameters}"/>
+            </StackLayout>
         </VerticalStackLayout>
     </ScrollView>
 
