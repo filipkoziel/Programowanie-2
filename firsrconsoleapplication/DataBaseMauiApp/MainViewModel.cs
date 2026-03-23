@@ -52,9 +52,11 @@ namespace DataBaseMauiApp
 
 		}
 
+        //
 
 
-		private Command setNewParameters;
+
+        private Command setNewParameters;
         public Command SetNewParameters
         {
             get

@@ -2,8 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="QuizDatabaseMauiApp.MainPage"
+             xmlns:converters="clr-namespace:QuizDatabaseMauiApp.Converters"
              xmlns:local="clr-namespace:QuizDatabaseMauiApp">
 
+    <ContentPage.Resources>
+        <converters:BoolToColorConverter x:Key="BoolToColorConverter"/>
+    </ContentPage.Resources>
+    
     <ContentPage.BindingContext>
         <local:MainViewModel />
     </ContentPage.BindingContext>
@@ -15,20 +20,20 @@
             <CollectionView ItemsSource="{Binding CurrentAnwsers}" SelectionMode="Single" SelectedItem="{Binding SelectedAnwser}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <ContentView>
+                        <Border Stroke="white" StrokeThickness="1" Padding="5" Margin="-1" HorizontalOptions="Center">
                             <HorizontalStackLayout Margin="5">
-                                <Border Stroke="white" StrokeThickness="1" Padding="5" Margin="-1" HorizontalOptions="Center">
-                                    <Label Text="{Binding Anwser.AnswerText}" />
-                                </Border>
+                                <Label Text="{Binding AnswerText}"/>
                             </HorizontalStackLayout>
-                        </ContentView>
+                        </Border>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
+            <Label Text="{Binding Message}"/>
+
             <HorizontalStackLayout>
-                <Button Command="{Binding CheckSelectedAnwser}"/>
-                <Button Command="{Binding NextQuestion}"/>
+                <Button Text="Sprawdź odpowiedź" IsEnabled="{Binding AnwserUnlocked}" Command="{Binding CheckSelectedAnwser}"/>
+                <Button Text="Kolejne Pytanie" Command="{Binding NextQuestion}"/>
             </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>

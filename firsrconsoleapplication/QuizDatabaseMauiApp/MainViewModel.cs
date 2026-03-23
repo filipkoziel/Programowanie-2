@@ -25,47 +25,120 @@ namespace QuizDatabaseMauiApp
             set { questionNumber = value; OnPropertyChanged(); }
         }
 
+        private bool anwserUnlocked;
+        public bool AnwserUnlocked
+        {
+            get { return anwserUnlocked; }
+            set { anwserUnlocked = value; OnPropertyChanged(); }
+        }
+
         private Question currentQuestion;
         public Question CurrentQuestion
         {
-            get { return Questions[questionNumber]; }
+            get { return currentQuestion; }
             set { currentQuestion = value; OnPropertyChanged(); }
         }
-
         private ObservableCollection<Anwser> currentAnwsers;
         public ObservableCollection<Anwser> CurrentAnwsers
         {
-            get { return new ObservableCollection<Anwser>(Anwsers.Where(n=>n.QuestionId == questionNumber).ToList()); }
-            set { currentAnwsers = value; OnPropertyChanged();}
+            get { return currentAnwsers; }
+            set { currentAnwsers = value; OnPropertyChanged(); }
         }
 
-        private Command? getQuestion = null;
-        public Command GetQuestion
+        private Anwser selectedAnwser;
+        public Anwser SelectedAnwser
+        {
+            get { return selectedAnwser; }
+            set { selectedAnwser = value; OnPropertyChanged(); }
+        }
+
+        private Anwser lockedInAnwser;
+        public Anwser LockedInAnwser
+        {
+            get { return lockedInAnwser; }
+            set { lockedInAnwser = value; OnPropertyChanged(); }
+        }
+
+        private string message;
+        public string Message;
+        {
+
+        }
+
+        private Command nextQuestion;
+        public Command NextQuestion
         {
             get
             {
-                if (getQuestion == null)
-                    getQuestion = new Command(
+                if (nextQuestion == null)
+                    nextQuestion = new Command(
                         () =>
                         {
-                            Questions.Clear();
-                            foreach (QuestionDTO person in repository.GetAllQuestionsDTO())
-                            {
-                                People.Add(new Person() { Id = person.Id, Name = person.Name, Surname = person.Surname, Age = person.Age, City = person.City });
-                            }
+                            AnwserUnlocked = true;
+                            LockedInAnwser = selectedAnwser;
+                            QuestionNumber++;
+                            RefreshQuestionsAndAnwsers();
                         }
                         );
-                return getQuestion;
+                return nextQuestion;
+
             }
+        }
+
+        private Command checkSelectedAnwser;
+        public Command CheckSelectedAnwser
+        {
+            get
+            {
+                if (checkSelectedAnwser == null)
+                    checkSelectedAnwser = new Command(
+                        () =>
+                        {
+                            AnwserUnlocked = false;
+                            LockedInAnwser = selectedAnwser;
+                        }
+                        );
+                return checkSelectedAnwser;
+
+            }
+
         }
 
         QuizRepository repository;
         public MainViewModel()
         {
             QuestionNumber = 1;
-            Questions = new ObservableCollection<Question>();
-            Anwsers = new ObservableCollection<Anwser>();
+            AnwserUnlocked = true;
             repository = new QuizRepository();
+            Questions = new ObservableCollection<Question>();
+            GetQuestions();
+            Anwsers = new ObservableCollection<Anwser>();
+            GetAnwsers();
+            RefreshQuestionsAndAnwsers();
+        }
+
+        void GetQuestions()
+        {
+            Questions.Clear();
+            foreach (QuestionsDTO question in repository.GetAllQuestionsDTO())
+            {
+                Questions.Add(new Question() { Id = question.Id, QuestionText = question.QuestionText });
+            }
+        }
+
+        void GetAnwsers()
+        { 
+            Anwsers.Clear();
+            foreach (AnwsersDTO anwser in repository.GetAllAnwsersDTO())
+            {
+                Anwsers.Add(new Anwser() { Id = anwser.Id, AnswerText = anwser.AnswerText, IsCorrect = anwser.IsCorrect, QuestionId = anwser.QuestionId});
+            }
+        }
+
+        void RefreshQuestionsAndAnwsers()
+        {
+            CurrentQuestion = Questions[questionNumber - 1];
+            CurrentAnwsers = new ObservableCollection<Anwser>(Anwsers.Where(a => a.QuestionId == (questionNumber)).ToList());
         }
     }
 }

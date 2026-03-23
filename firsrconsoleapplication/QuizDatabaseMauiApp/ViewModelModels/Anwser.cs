@@ -16,17 +16,17 @@ namespace QuizDatabaseMauiApp.ViewModelModels
             set { id = value; }
         }
 
-        private int anwserText;
+        private string anwserText;
 
-        public int AnswerText
+        public string AnswerText
         {
             get { return anwserText; }
             set { anwserText = value; }
         }
 
-        private int isCorrect;
+        private bool isCorrect;
 
-        public int IsCorrect
+        public bool IsCorrect
         {
             get { return isCorrect; }
             set { isCorrect = value; }
