@@ -54,7 +54,28 @@ namespace PlanMauiApp
             get { return plannedDays; }
             set { plannedDays = value; OnPropertyChanged(); }
         }
-        
+
+        private List<int> availableYears;
+        public List<int> AvailableYears
+        {
+            get { return availableYears; }
+            set { availableYears = value; OnPropertyChanged(); }
+        }
+
+        private List<int> availableMonths;
+        public List<int> AvailableMonths
+        {
+            get { return availableMonths; }
+            set { availableMonths = value; OnPropertyChanged(); }
+        }
+
+        private List<int> availableDays;
+        public List<int> AvailableDays
+        {
+            get { return availableDays; }
+            set { availableDays = value; OnPropertyChanged(); }
+        }
+
 
         PlanRepository repository;
 		public MainViewModel()
@@ -67,6 +88,15 @@ namespace PlanMauiApp
             PlannedDays = repository.GetPlannedDays(SelectedMonth);
             selectedDay = PlannedDays.FirstOrDefault();
 
+            getAvailableYearsMonthsAndDays();
         }
-	}
+
+        void getAvailableYearsMonthsAndDays()
+        {
+            DateTime localDate = DateTime.Today;
+            availableYears = new List<int>() { localDate.Year, localDate.Year+1};
+            availableMonths = new List<int>();
+            availableDays = new List<int>();
+        }
+    }
 }

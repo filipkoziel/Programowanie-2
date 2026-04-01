@@ -15,9 +15,18 @@
 
             <Label Text="Wybierz date do wyświetenia"/>
             <HorizontalStackLayout>
-                <Picker ItemsSource="{Binding AvailableYears}" Title="Rok" SelectedItem="{Binding SelectedYear}"/>
-                <Picker ItemsSource="{Binding AvailableMonths}" Title="Miesiąc" SelectedItem="{Binding SelectedMonth}"/>
-                <Picker ItemsSource="{Binding AvailableDays}" Title="Dzień" SelectedItem="{Binding SelectedDay}"/>
+                <Picker ItemsSource="{Binding PlannedYears}" Title="Rok" SelectedItem="{Binding SelectedYear}"/>
+                <Picker ItemsSource="{Binding PlannedMonths}" Title="Miesiąc" SelectedItem="{Binding SelectedMonth}"/>
+                <Picker ItemsSource="{Binding PlannedDays}" Title="Dzień" SelectedItem="{Binding SelectedDay}"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <Label Text="Rok:"/>
+                <Entry Text="{Binding EnteredYear}"/>
+                <Label Text="Miesiąc:"/>
+                <Entry Text="{Binding EnteredMonth}"/>
+                <Label Text="Dzień:"/>
+                <Entry Text="{Binding EnteredDay}"/>
             </HorizontalStackLayout>
 
 
