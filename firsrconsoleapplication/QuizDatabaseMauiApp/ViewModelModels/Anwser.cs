@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuizDatabaseMauiApp.ViewModelModels
 {
-    public class Anwser
+    public class Anwser : BindableObject
     {
         private int id;
 
@@ -38,6 +38,14 @@ namespace QuizDatabaseMauiApp.ViewModelModels
         {
             get { return questionId; }
             set { questionId = value; }
+        }
+
+        private string color;
+
+        public string Color
+        {
+            get { return color; }
+            set { color = value; OnPropertyChanged(); }
         }
     }
 }

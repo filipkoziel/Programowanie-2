@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlanMauiApp.MainPage"
+             xmlns:local="clr-namespace:PlanMauiApp">
+
+    <ContentPage.BindingContext>
+        <local:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label Text="Wybierz date do wyświetenia"/>
+            <HorizontalStackLayout>
+                <Picker ItemsSource="{Binding AvailableYears}" Title="Rok" SelectedItem="{Binding SelectedYear}"/>
+                <Picker ItemsSource="{Binding AvailableMonths}" Title="Miesiąc" SelectedItem="{Binding SelectedMonth}"/>
+                <Picker ItemsSource="{Binding AvailableDays}" Title="Dzień" SelectedItem="{Binding SelectedDay}"/>
+            </HorizontalStackLayout>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

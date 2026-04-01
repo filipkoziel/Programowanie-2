@@ -22,7 +22,7 @@
                     <DataTemplate>
                         <Border Stroke="white" StrokeThickness="1" Padding="5" Margin="-1" HorizontalOptions="Center">
                             <HorizontalStackLayout Margin="5">
-                                <Label Text="{Binding AnswerText}"/>
+                                <Label Text="{Binding AnswerText}" TextColor="{Binding Color}"/>
                             </HorizontalStackLayout>
                         </Border>
                     </DataTemplate>
@@ -33,7 +33,7 @@
 
             <HorizontalStackLayout>
                 <Button Text="Sprawdź odpowiedź" IsEnabled="{Binding AnwserUnlocked}" Command="{Binding CheckSelectedAnwser}"/>
-                <Button Text="Kolejne Pytanie" Command="{Binding NextQuestion}"/>
+                <Button Text="Kolejne Pytanie" IsEnabled="{Binding NextQuestionUnlocked}" Command="{Binding NextQuestion}"/>
             </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>

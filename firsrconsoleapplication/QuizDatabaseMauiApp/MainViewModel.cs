@@ -12,11 +12,6 @@ namespace QuizDatabaseMauiApp
 {
     internal class MainViewModel: BindableObject
     {
-        public ObservableCollection<Question> Questions { get; set; }
-
-        public ObservableCollection<Anwser> Anwsers { get; set; }
-
-
 
         private int questionNumber;
         public int QuestionNumber
@@ -30,6 +25,13 @@ namespace QuizDatabaseMauiApp
         {
             get { return anwserUnlocked; }
             set { anwserUnlocked = value; OnPropertyChanged(); }
+        }
+
+        private bool nextQuestionUnlocked;
+        public bool NextQuestionUnlocked
+        {
+            get { return nextQuestionUnlocked; }
+            set { nextQuestionUnlocked = value; OnPropertyChanged(); }
         }
 
         private Question currentQuestion;
@@ -60,9 +62,10 @@ namespace QuizDatabaseMauiApp
         }
 
         private string message;
-        public string Message;
+        public string Message
         {
-
+            get { return message; }
+            set { message = value; OnPropertyChanged(); }
         }
 
         private Command nextQuestion;
@@ -76,8 +79,9 @@ namespace QuizDatabaseMauiApp
                         {
                             AnwserUnlocked = true;
                             LockedInAnwser = selectedAnwser;
-                            QuestionNumber++;
-                            RefreshQuestionsAndAnwsers();
+                            Message = string.Empty;
+                            ChangeCurrentQuestion();
+                            ChangeCurrentAnwsers();
                         }
                         );
                 return nextQuestion;
@@ -96,6 +100,21 @@ namespace QuizDatabaseMauiApp
                         {
                             AnwserUnlocked = false;
                             LockedInAnwser = selectedAnwser;
+                            if (selectedAnwser.IsCorrect)
+                            {
+                                SelectedAnwser.Color = "lawngreen";
+                                Message = "Dobra Odpowiedź";
+                            }
+                            else
+                            {
+                                SelectedAnwser.Color = "red";
+                                foreach(Anwser anwser in currentAnwsers)
+                                {
+                                    if (anwser.IsCorrect)
+                                        anwser.Color = "lawngreen";
+                                }
+                                Message = "Zła Odpowiedź";
+                            }
                         }
                         );
                 return checkSelectedAnwser;
@@ -107,38 +126,38 @@ namespace QuizDatabaseMauiApp
         QuizRepository repository;
         public MainViewModel()
         {
-            QuestionNumber = 1;
+            QuestionNumber = 0;
             AnwserUnlocked = true;
+            NextQuestionUnlocked = true;
             repository = new QuizRepository();
-            Questions = new ObservableCollection<Question>();
-            GetQuestions();
-            Anwsers = new ObservableCollection<Anwser>();
-            GetAnwsers();
-            RefreshQuestionsAndAnwsers();
+            currentQuestion = new Question();
+            ChangeCurrentQuestion();
+            currentAnwsers = new ObservableCollection<Anwser>();
+            ChangeCurrentAnwsers();
         }
 
-        void GetQuestions()
+        void ChangeCurrentQuestion()
         {
-            Questions.Clear();
-            foreach (QuestionsDTO question in repository.GetAllQuestionsDTO())
+            var question = repository.GetQuestionDTO(questionNumber);
+            if (question != null)
             {
-                Questions.Add(new Question() { Id = question.Id, QuestionText = question.QuestionText });
+                CurrentQuestion = new Question() { Id = question.Id, QuestionText = question.QuestionText };
+                questionNumber = question.Id;
+            }
+            else
+            { 
+                NextQuestionUnlocked = false;
+                AnwserUnlocked = false;
             }
         }
 
-        void GetAnwsers()
+        void ChangeCurrentAnwsers()
         { 
-            Anwsers.Clear();
-            foreach (AnwsersDTO anwser in repository.GetAllAnwsersDTO())
+            currentAnwsers.Clear();
+            foreach (AnwsersDTO anwser in repository.GetCurrentAnwsersDTO(currentQuestion.Id))
             {
-                Anwsers.Add(new Anwser() { Id = anwser.Id, AnswerText = anwser.AnswerText, IsCorrect = anwser.IsCorrect, QuestionId = anwser.QuestionId});
+                CurrentAnwsers.Add(new Anwser() { Id = anwser.Id, AnswerText = anwser.AnswerText, IsCorrect = anwser.IsCorrect, QuestionId = anwser.QuestionId, Color = "black"});
             }
-        }
-
-        void RefreshQuestionsAndAnwsers()
-        {
-            CurrentQuestion = Questions[questionNumber - 1];
-            CurrentAnwsers = new ObservableCollection<Anwser>(Anwsers.Where(a => a.QuestionId == (questionNumber)).ToList());
         }
     }
 }

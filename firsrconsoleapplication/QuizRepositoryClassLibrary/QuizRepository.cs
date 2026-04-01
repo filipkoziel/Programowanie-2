@@ -31,18 +31,19 @@ namespace QuizRepositoryClassLibrary
                 .ToList();
         }
 
-        public List<QuestionsDTO> GetAllQuestionsDTO()
+        public QuestionsDTO? GetQuestionDTO(int number)
         {
             return context.Questions
-                .OrderBy(q => q.Id)
+                .OrderBy(p => p.Id)
+                .Where(q => q.Id > number)
                 .Select(q => new QuestionsDTO() { Id = q.Id, QuestionText = q.QuestionText })
-                .ToList();
+                .FirstOrDefault();
         }
 
-        public List<AnwsersDTO> GetAllAnwsersDTO()
+        public List<AnwsersDTO> GetCurrentAnwsersDTO(int number)
         {
             return context.Answers
-                .OrderBy(a => a.Id)
+                .Where(a => a.QuestionId == number)
                 .Select(a => new AnwsersDTO() { Id = a.Id, AnswerText = a.AnswerText, IsCorrect = a.IsCorrect, QuestionId = a.QuestionId })
                 .ToList();
         }
