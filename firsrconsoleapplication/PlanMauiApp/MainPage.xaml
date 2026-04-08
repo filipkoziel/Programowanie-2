@@ -15,20 +15,26 @@
 
             <Label Text="Wybierz date do wyświetenia"/>
             <HorizontalStackLayout>
-                <Picker ItemsSource="{Binding PlannedYears}" Title="Rok" SelectedItem="{Binding SelectedYear}"/>
-                <Picker ItemsSource="{Binding PlannedMonths}" Title="Miesiąc" SelectedItem="{Binding SelectedMonth}"/>
-                <Picker ItemsSource="{Binding PlannedDays}" Title="Dzień" SelectedItem="{Binding SelectedDay}"/>
+                <Picker ItemsSource="{Binding PlannedYears}" Title="Rok" SelectedItem="{Binding SelectedPlannedYear}"/>
+                <Picker ItemsSource="{Binding PlannedMonths}" Title="Miesiąc" SelectedItem="{Binding SelectedPlannedMonth}"/>
+                <Picker ItemsSource="{Binding PlannedDays}" Title="Dzień" SelectedItem="{Binding SelectedPlannedDay}"/>
             </HorizontalStackLayout>
+            <Button Text="Odświerz liste" Command="RefreshPlans"/>
+            
+            
 
             <HorizontalStackLayout>
                 <Label Text="Rok:"/>
-                <Entry Text="{Binding EnteredYear}"/>
+                <Picker ItemsSource="{Binding AvailableYearsForNewPlan}" SelectedItem="{Binding SelectedAvailableYearForNewPlan}"/>
                 <Label Text="Miesiąc:"/>
-                <Entry Text="{Binding EnteredMonth}"/>
+                <Picker ItemsSource="{Binding AvailableMonthsForNewPlan}" SelectedItem="{Binding SelectedAvailableMonthForNewPlan}"/>
                 <Label Text="Dzień:"/>
-                <Entry Text="{Binding EnteredDay}"/>
+                <Picker ItemsSource="{Binding AvailableDaysForNewPlan}" SelectedItem="{Binding SelectedAvailableDayForNewPlan}"/>
+                <Label Text="Zadanie:"/>
+                <Entry Text="{Binding EnteredTaskTextForNewPlan}"/>
             </HorizontalStackLayout>
 
+            <Button Text="Dodaj zadanie do planu" Command="{Binding AddNewTaskToDatabase}"/>
 
         </VerticalStackLayout>
     </ScrollView>

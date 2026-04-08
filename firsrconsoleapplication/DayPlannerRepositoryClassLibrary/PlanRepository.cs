@@ -18,6 +18,7 @@ namespace DayPlannerRepositoryClassLibrary
         {
             return context.Plannerdays
                 .Select(d => d.Year)
+                .Distinct()
                 .ToList();
         }
         public List<int> GetPlannedMonths(int selectedYear)
@@ -25,6 +26,7 @@ namespace DayPlannerRepositoryClassLibrary
             return context.Plannerdays
                 .Where(d => d.Year == selectedYear)
                 .Select(d => d.Month)
+                .Distinct()
                 .ToList();
         }
         public List<int> GetPlannedDays(int selectedMonth)
@@ -32,6 +34,7 @@ namespace DayPlannerRepositoryClassLibrary
             return context.Plannerdays
                 .Where (d => d.Month == selectedMonth)
                 .Select(d => d.Day)
+                .Distinct()
                 .ToList();
         }
 
@@ -42,6 +45,21 @@ namespace DayPlannerRepositoryClassLibrary
                 .Where(p => p.Plannerday.Year == selectedYear)
                 .Select(p => p.Text)
                 .ToList();
+        }
+
+        public void InsertNewPlan(int day, int month, int year, string text)
+        {
+            Plannerday? plannerday = context.Plannerdays.FirstOrDefault(pd => pd.Day == day && pd.Month == month && pd.Year == year);
+            if (plannerday == null)
+            {
+                plannerday = new Plannerday() {Day = day, Month = month, Year = year };
+                context.Plannerdays.Add(plannerday);
+                context.SaveChanges();
+            }
+
+            Plan plan = new Plan() { Text = text , PlannerdayId = plannerday.Id};
+            context.Plans.Add(plan);
+            context.SaveChanges();
         }
     }
 }
