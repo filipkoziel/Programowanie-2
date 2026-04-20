@@ -3,6 +3,7 @@ using DayPlannerRepositoryClassLibrary.DTOs;
 using PlanMauiApp.ViewModelModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,35 +14,9 @@ namespace PlanMauiApp
 {
     public class MainViewModel : BindableObject
     {
-        private int selectedPlannedYear;
-        public int SelectedPlannedYear
-        {
-            get { return selectedPlannedYear; }
-            set { selectedPlannedYear = value; 
-                OnPropertyChanged();
-                SelectedPlannedYearChanged();
-            }
-        }
 
-        private int selectedPlannedMonth;
-        public int SelectedPlannedMonth
-        {
-            get { return selectedPlannedMonth; }
-            set { selectedPlannedMonth = value; 
-                OnPropertyChanged();
-                SelectedPlannedMonthChanged();
-            }
-        }
-
-        private int selectedPlannedDay;
-        public int SelectedPlannedDay
-        {
-            get { return selectedPlannedDay; }
-            set { selectedPlannedDay = value; OnPropertyChanged(); }
-        }
 
         private int selectedAvailableYearForNewPlan;
-
         public int SelectedAvailableYearForNewPlan
         {
             get { return selectedAvailableYearForNewPlan; }
@@ -72,25 +47,25 @@ namespace PlanMauiApp
             set { selectedAvailableDayForNewPlan = value; OnPropertyChanged(); }
         }
 
-        private List<int> plannedYears;
-		public List<int> PlannedYears
+        private List<int> availableYearsForNewPlan;
+        public List<int> AvailableYearsForNewPlan
         {
-			get { return plannedYears; }
-			set { plannedYears = value; OnPropertyChanged(); }
-		}
-
-        private List<int> plannedMonths;
-        public List<int> PlannedMonths
-        {
-            get { return plannedMonths; }
-            set { plannedMonths = value; OnPropertyChanged(); }
+            get { return availableYearsForNewPlan; }
+            set { availableYearsForNewPlan = value; OnPropertyChanged(); }
         }
 
-        private List<int> plannedDays;
-        public List<int> PlannedDays
+        private List<int> availableMonthsForNewPlan;
+        public List<int> AvailableMonthsForNewPlan
         {
-            get { return plannedDays; }
-            set { plannedDays = value; OnPropertyChanged(); }
+            get { return availableMonthsForNewPlan; }
+            set { availableMonthsForNewPlan = value; OnPropertyChanged(); }
+        }
+
+        private List<int> availableDaysForNewPlan;
+        public List<int> AvailableDaysForNewPlan
+        {
+            get { return availableDaysForNewPlan; }
+            set { availableDaysForNewPlan = value; OnPropertyChanged(); }
         }
 
         private int enteredYearForNewPlan;
@@ -121,25 +96,67 @@ namespace PlanMauiApp
             set { enteredTaskTextForNewPlan = value; OnPropertyChanged(); }
         }
 
-        private List<int> availableYearsForNewPlan;
-        public List<int> AvailableYearsForNewPlan
+        private List<int> plannedYears;
+		public List<int> PlannedYears
         {
-            get { return availableYearsForNewPlan; }
-            set { availableYearsForNewPlan = value; OnPropertyChanged(); }
+			get { return plannedYears; }
+			set { plannedYears = value; OnPropertyChanged(); }
+		}
+
+        private List<int> plannedMonths;
+        public List<int> PlannedMonths
+        {
+            get { return plannedMonths; }
+            set { plannedMonths = value; OnPropertyChanged(); }
         }
 
-        private List<int> availableMonthsForNewPlan;
-        public List<int> AvailableMonthsForNewPlan
+        private List<int> plannedDays;
+        public List<int> PlannedDays
         {
-            get { return availableMonthsForNewPlan; }
-            set { availableMonthsForNewPlan = value; OnPropertyChanged(); }
+            get { return plannedDays; }
+            set { plannedDays = value; OnPropertyChanged(); }
         }
 
-        private List<int> availableDaysForNewPlan;
-        public List<int> AvailableDaysForNewPlan
+        private int selectedPlannedYear;
+        public int SelectedPlannedYear
         {
-            get { return availableDaysForNewPlan; }
-            set { availableDaysForNewPlan = value; OnPropertyChanged(); }
+            get { return selectedPlannedYear; }
+            set
+            {
+                selectedPlannedYear = value;
+                OnPropertyChanged();
+                SelectedPlannedYearChanged();
+            }
+        }
+
+        private int selectedPlannedMonth;
+        public int SelectedPlannedMonth
+        {
+            get { return selectedPlannedMonth; }
+            set
+            {
+                selectedPlannedMonth = value;
+                OnPropertyChanged();
+                SelectedPlannedMonthChanged();
+            }
+        }
+
+        private int selectedPlannedDay;
+        public int SelectedPlannedDay
+        {
+            get { return selectedPlannedDay; }
+            set { selectedPlannedDay = value; OnPropertyChanged(); }
+        }
+
+
+
+
+
+        private ObservableCollection<Plan> plansForSelectedDay;
+        public ObservableCollection<Plan> PlansForSelectedDay
+        {
+            get { return plansForSelectedDay; }
+            set { plansForSelectedDay = value; OnPropertyChanged(); }
         }
 
         private Command addNewTaskToDatabase;
@@ -152,13 +169,52 @@ namespace PlanMauiApp
                         () =>
                         {
                             repository.InsertNewPlan(selectedAvailableDayForNewPlan, selectedAvailableMonthForNewPlan, selectedAvailableYearForNewPlan, EnteredTaskTextForNewPlan);
-                            PlannedYears = repository.GetPlannedYears();
-                            SelectedPlannedYear = PlannedYears.FirstOrDefault();
+                            RefreshListOfPlans();
                         }
                         );
                 return addNewTaskToDatabase;
             }
         }
+
+        private Command delete;
+        public Command Delete
+        {
+            get
+            {
+                if (delete == null)
+                    delete = new Command<Plan>(
+                        (p) =>
+                        {
+                            repository.DeletePlanFromId(p.Id);
+                            PlansForSelectedDay.Remove(p);
+                        }
+                        );
+                return delete;
+            }
+        }
+
+        private Command getPlansForDate;
+        public Command GetPlansForDate
+        {
+            get 
+            {
+                if (getPlansForDate == null)
+                    getPlansForDate = new Command(
+                        () =>
+                        {
+                            if (PlansForSelectedDay == null)
+                                PlansForSelectedDay = new ObservableCollection<Plan>();
+                            else
+                                PlansForSelectedDay.Clear();
+                            foreach (PlanDTO planDTO in repository.GetPlansForDayDTO(SelectedPlannedYear, SelectedPlannedMonth, SelectedPlannedDay))
+                            PlansForSelectedDay.Add(new Plan { Id = planDTO.Id, Text = planDTO.Text, Delete = Delete});
+                        }
+                        );
+                return getPlansForDate;
+            }
+        }
+
+
 
         private void SelectedAvailableYearChanged()
         {
@@ -205,18 +261,23 @@ namespace PlanMauiApp
 		{
             repository = new PlanRepository();
 
-			PlannedYears = repository.GetPlannedYears();
-            SelectedPlannedYear = PlannedYears.FirstOrDefault();
+            RefreshListOfPlans();
+            repository.GetPlannedYears();
 
             SetAvailableYears();
-            SelectedAvailableYearForNewPlan = availableYearsForNewPlan.FirstOrDefault();
+            SelectedAvailableYearForNewPlan = AvailableYearsForNewPlan.FirstOrDefault();
         }
 
-        void SetAvailableYears()
+        private void SetAvailableYears()
         {
             DateTime localDate = DateTime.Today;
-            availableYearsForNewPlan = new List<int>() { localDate.Year, localDate.Year + 1 };
+            AvailableYearsForNewPlan = new List<int>() { localDate.Year, localDate.Year + 1 };
         }
-        
+        private void RefreshListOfPlans()
+        {
+            PlannedYears = repository.GetPlannedYears();
+            SelectedPlannedYear = PlannedYears.FirstOrDefault();
+        }
+
     }
 }

@@ -4,8 +4,8 @@ using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DayPlannerRepositoryClassLibrary.DTOs;
 using DayPlannerRepositoryClassLibrary.models;
+using DayPlannerRepositoryClassLibrary.DTOs;
 using Microsoft.EntityFrameworkCore;
 
 namespace DayPlannerRepositoryClassLibrary
@@ -42,9 +42,36 @@ namespace DayPlannerRepositoryClassLibrary
         {
             return context.Plans
                 .Include(p => p.Plannerday)
-                .Where(p => p.Plannerday.Year == selectedYear)
+                .Where(p => p.Plannerday.Year == selectedYear && p.Plannerday.Month == selectedMonth && p.Plannerday.Day == SelectedDay)
                 .Select(p => p.Text)
                 .ToList();
+        }
+
+        public List<PlanDTO> GetPlansForDayDTO(int selectedYear, int selectedMonth, int SelectedDay)
+        {
+            return context.Plans
+                .Include(p => p.Plannerday)
+                .Where(p => p.Plannerday.Year == selectedYear && p.Plannerday.Month == selectedMonth && p.Plannerday.Day == SelectedDay)
+                .Select(p => new PlanDTO(){Id = p.Id, Text = p.Text})
+                .ToList();
+        }
+
+        public void DeletePlanFromId(int id)
+        {
+            Plan planToDelete = context.Plans.Where(p => p.Id == id).FirstOrDefault();
+
+            int plannerdayId = planToDelete.PlannerdayId;
+
+            context.Plans.Remove(planToDelete);
+            context.SaveChanges();
+
+            if (context.Plans.Where(p => p.PlannerdayId == plannerdayId).Count() == 0)
+            {
+                Plannerday plannerdayToDelete = context.Plannerdays.FirstOrDefault(pd => pd.Id == plannerdayId);
+                context.Plannerdays.Remove(plannerdayToDelete);
+                context.SaveChanges();
+            }
+
         }
 
         public void InsertNewPlan(int day, int month, int year, string text)

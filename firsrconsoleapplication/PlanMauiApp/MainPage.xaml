@@ -19,9 +19,27 @@
                 <Picker ItemsSource="{Binding PlannedMonths}" Title="Miesiąc" SelectedItem="{Binding SelectedPlannedMonth}"/>
                 <Picker ItemsSource="{Binding PlannedDays}" Title="Dzień" SelectedItem="{Binding SelectedPlannedDay}"/>
             </HorizontalStackLayout>
-            <Button Text="Odświerz liste" Command="RefreshPlans"/>
-            
-            
+            <Button Text="Odświerz liste" Command="{Binding GetPlansForDate}"/>
+
+            <VerticalStackLayout>
+                <CollectionView ItemsSource="{Binding PlansForSelectedDay}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Stroke="black" StrokeThickness="1" Padding="5" Margin="-1" HorizontalOptions="Center">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding Text}" VerticalOptions="Center" LineBreakMode="CharacterWrap"/>
+                                    <Button Grid.Column="2" Text="Usuń" VerticalOptions="Center" Command="{Binding Delete}" CommandParameter="{Binding}"/>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
 
             <HorizontalStackLayout>
                 <Label Text="Rok:"/>
@@ -31,7 +49,7 @@
                 <Label Text="Dzień:"/>
                 <Picker ItemsSource="{Binding AvailableDaysForNewPlan}" SelectedItem="{Binding SelectedAvailableDayForNewPlan}"/>
                 <Label Text="Zadanie:"/>
-                <Entry Text="{Binding EnteredTaskTextForNewPlan}"/>
+                <Editor AutoSize="TextChanges"  Text="{Binding EnteredTaskTextForNewPlan}" WidthRequest="600"/>
             </HorizontalStackLayout>
 
             <Button Text="Dodaj zadanie do planu" Command="{Binding AddNewTaskToDatabase}"/>
