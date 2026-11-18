@@ -36,7 +36,7 @@ namespace OrderPaymentsConsoleApp.Tests
             //assert
             Assert.Throws<ArgumentOutOfRangeException>(f);
         }
-
+          
         [Theory]
         [InlineData(100, 50, 150)]
         [InlineData(0, 0.50, 0.50)]
