@@ -4,6 +4,27 @@ namespace INF04_2026Zad2
 {
     public partial class MainPage : ContentPage
     {
+        private ObservableCollection<ObservableCollection<Kosc>> rows;
+        public ObservableCollection<ObservableCollection<Kosc>> Rows
+        {
+            get { return rows; }
+            set { rows = value; }
+        }
+
+        private ObservableCollection<Kosc> firstRow;
+        public ObservableCollection<Kosc> FirstRow
+        {
+            get { return firstRow; }
+            set { firstRow = value; }
+        }
+
+        private ObservableCollection<Kosc> secondRow;
+        public ObservableCollection<Kosc> SecondRow
+        {
+            get { return secondRow; }
+            set { secondRow = value; }
+        }
+
         private ObservableCollection<Kosc> dice;
         public ObservableCollection<Kosc> Dice
         {
@@ -29,13 +50,13 @@ namespace INF04_2026Zad2
                         () =>
                         {
                             RollResult = 0;
-                            foreach (Kosc d in Dice)
+                            foreach (ObservableCollection<Kosc> r in Rows)
                             {
-                                if(d.Available)
+                                foreach (Kosc k in r)
                                 {
-                                    d.throwDiceIfAvailable();
+                                    k.throwDiceIfAvailable();
+                                    RollResult += k.numberThrown;
                                 }
-                                RollResult += d.numberThrown;
                             }
                         }
                         );
@@ -51,6 +72,20 @@ namespace INF04_2026Zad2
                 dice.Add(new Kosc(0));
             }
             rollResult = 0;
+
+            firstRow = new ObservableCollection<Kosc>();
+            for(int i = 0; i < 2; i++)
+            {
+                firstRow.Add(new Kosc(0));
+            }
+
+            secondRow = new ObservableCollection<Kosc>();
+            for (int i = 0; i < 3; i++)
+            {
+                secondRow.Add(new Kosc(0));
+            }
+
+            rows = new ObservableCollection<ObservableCollection<Kosc>> { firstRow, secondRow };
 
             InitializeComponent();
         }

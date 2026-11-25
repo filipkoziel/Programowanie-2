@@ -1,23 +1,33 @@
 ﻿<ContentPage x:Class="INF04_2026Zad2.MainPage"
              x:Name="thisPage"
              xmlns:Data="clr-namespace:INF04_2026Zad2.Data"
+             xmlns:Converters="clr-namespace:INF04_2026Zad2.Converters"
              BindingContext="{x:Reference thisPage}"
              BackgroundColor="#ED27C121">
+
+    <ContentPage.Resources>
+        <Converters:AvailabilityToOpacityConverter x:Key="AvailabilityToOpacityConverter"/>
+    </ContentPage.Resources>
 
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-            <!--<VerticalStackLayout BindableLayout.ItemsSource="{Binding Dice}">
+            <VerticalStackLayout BindableLayout.ItemsSource="{Binding Rows}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout Orientation="Vertical">
-                            <ImageButton Source="{Binding ImageName}" Command="{Binding SwitchAvailability}" Margin="10" HeightRequest="200" Aspect="AspectFit"/>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" BindableLayout.ItemsSource="{Binding .}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <ImageButton Source="{Binding ImageName}" Command="{Binding SwitchAvailability}" Margin="10" HeightRequest="200" Aspect="AspectFit" BackgroundColor="Transparent" HorizontalOptions="Center" Opacity="{Binding Available, Converter={StaticResource AvailabilityToOpacityConverter}}"/>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
                         </StackLayout>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
-            </VerticalStackLayout>-->
-            <HorizontalStackLayout HorizontalOptions="Center">
+            </VerticalStackLayout>
+            
+            <!--<HorizontalStackLayout HorizontalOptions="Center">
                 <ImageButton Source="{Binding Dice[0].ImageName}" Command="{Binding Dice[0].SwitchAvailability}" Margin="10" HeightRequest="200" Aspect="AspectFit" BackgroundColor="Transparent" HorizontalOptions="Center" Opacity="{Binding Dice[0].Opacity}"/>
                 <ImageButton Source="{Binding Dice[1].ImageName}" Command="{Binding Dice[1].SwitchAvailability}" Margin="10" HeightRequest="200" Aspect="AspectFit" BackgroundColor="Transparent" HorizontalOptions="Center" Opacity="{Binding Dice[1].Opacity}"/>
             </HorizontalStackLayout>
@@ -25,7 +35,7 @@
                 <ImageButton Source="{Binding Dice[2].ImageName}" Command="{Binding Dice[2].SwitchAvailability}" Margin="10" HeightRequest="200" Aspect="AspectFit" BackgroundColor="Transparent" HorizontalOptions="Center" Opacity="{Binding Dice[2].Opacity}"/>
                 <ImageButton Source="{Binding Dice[3].ImageName}" Command="{Binding Dice[3].SwitchAvailability}" Margin="10" HeightRequest="200" Aspect="AspectFit" BackgroundColor="Transparent" HorizontalOptions="Center" Opacity="{Binding Dice[3].Opacity}"/>
                 <ImageButton Source="{Binding Dice[4].ImageName}" Command="{Binding Dice[4].SwitchAvailability}" Margin="10" HeightRequest="200" Aspect="AspectFit" BackgroundColor="Transparent" HorizontalOptions="Center" Opacity="{Binding Dice[4].Opacity}"/>
-            </HorizontalStackLayout>
+            </HorizontalStackLayout>-->
 
             <Button Text="Rzuć" Command="{Binding ThrowDice}" BackgroundColor="#ED275021" HorizontalOptions="Center"/>
             <Label Text="{Binding RollResult}" FontSize="40" Margin="10" HorizontalOptions="Center"/>

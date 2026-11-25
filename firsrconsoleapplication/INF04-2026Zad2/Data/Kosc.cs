@@ -79,19 +79,6 @@ namespace INF04_2026Zad2.Data
             }
         }
 
-        public string thrownNumberToWord()
-        {
-            switch(numberThrown)
-            {
-                case 1: return "one";
-                case 2: return "dwa";
-                case 3: return "trzy";
-                case 4: return "cztery";
-                case 5: return "pięć";
-                case 6: return "sześć";
-                default: return "zero";
-            }
-        }
 
         private Command switchAvailability;
         public Command SwitchAvailability
