@@ -24,7 +24,7 @@ namespace INF04_2026Zad2.Data
         public bool Available
         {
             get { return available; }
-            set { available = value; }
+            set { available = value; OnPropertyChanged(); }
         }
 
         private double opacity;
@@ -96,5 +96,6 @@ namespace INF04_2026Zad2.Data
                 return switchAvailability;
             }
         }
+
     }
 }

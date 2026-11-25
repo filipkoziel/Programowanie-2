@@ -11,12 +11,20 @@ namespace INF04_2026Zad2.Converters
     {
         public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
-            if ((bool)value)
-            {
-                return 1;
+            if (value == null)
+            {  
+                throw new ArgumentNullException("value"); 
             }
             else
-                return 0;
+            {
+                if ((bool)value)
+                {
+                    return 1;
+                }
+                else
+                    return 0.5;
+            }
+
         }
 
         public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
